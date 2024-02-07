@@ -71,9 +71,9 @@ Verbinden Sie als Nächstes die oben bereitgestellte Azure KI Services-Ressourc
 
 ## Bereinigung
 
-Wenn Sie nicht vorhaben, weitere Übungen zu bearbeiten, löschen Sie alle Ressourcen, die Sie nicht mehr benötigen. Dadurch werden unnötige Kosten vermieden.
+Wenn Sie nicht vorhaben, weitere Übungen zu machen, löschen Sie alle Ressourcen, die Sie nicht mehr benötigen. Dadurch werden unnötige Kosten vermieden.
 
-1. Öffnen Sie das **Azure-Portal** unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und wählen Sie die Ressourcengruppe aus, die die von Ihnen erstellte Ressource enthält.
+1. Öffnen Sie das **Azure-Portal** auf [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und wählen Sie die Ressourcengruppe aus, die die von Ihnen erstellte Ressource enthält.
 1. Wählen Sie die Ressource, dann **Löschen** und anschließend **Ja** aus, um den Löschvorgang zu bestätigen. Die Ressource wird dann gelöscht.
 
 ## Weitere Informationen

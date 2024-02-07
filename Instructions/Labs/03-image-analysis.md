@@ -20,7 +20,7 @@ Sie können die Bildanalysefunktionen von Azure KI Vision mit einer **Azure KI 
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region:** USA, Osten.
     - **Name**: *Geben Sie einen eindeutigen Namen ein*.
-    - **Tarif**: *Standard S0.*
+    - **Tarif**: *Standard S0.*
     - **Durch Aktivieren dieses Kontrollkästchens bestätige ich, dass ich die folgenden Bedingungen gelesen und verstanden habe**: *Ausgewählt*.
 
 1. Wählen Sie die Option **Überprüfen und erstellen** und dann **Erstellen** aus, und warten Sie, bis die Bereitstellung abgeschlossen ist.
@@ -119,7 +119,7 @@ In dieser Aufgabe verwenden Sie die Funktion **Object detection** der Bildanalys
 
 ## Bereinigung
 
-Wenn Sie nicht vorhaben, weitere Übungen zu bearbeiten, löschen Sie alle Ressourcen, die Sie nicht mehr benötigen. Dadurch werden unnötige Kosten vermieden.
+Wenn Sie nicht vorhaben, weitere Übungen zu machen, löschen Sie alle Ressourcen, die Sie nicht mehr benötigen. Dadurch werden unnötige Kosten vermieden.
 
 1.  Öffnen Sie das [Azure-Portal]( https://portal.azure.com) und wählen Sie die Ressourcengruppe aus, die die Ressource enthält, die Sie erstellt haben. 
 1.  Wählen Sie die Ressource, dann **Löschen** und anschließend **Ja** aus, um den Löschvorgang zu bestätigen. Die Ressource wird dann gelöscht.
