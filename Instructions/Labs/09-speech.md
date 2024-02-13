@@ -29,7 +29,7 @@ In dieser Übung erstellen Sie eine Azure KI Speech-Ressource, es sei denn, Sie 
 
 1. Wählen Sie [**https://aka.ms/mslearn-speech-files**](https://aka.ms/mslearn-speech-files) aus, um **speech.zip** herunterzuladen. Öffnen Sie den Ordner . 
 
-1. Suchen Sie auf der Seite „Erste Schritte mit Speech“ unter *Speech* nach *Echtzeit-Spracherkennung*. Wählen Sie **Erkunden der Echtzeit-Spracherkennung** aus.
+1. Suchen Sie auf der Seite „Erste Schritte mit Speech“ unter *Spracherkennung* nach *Echtzeit-Spracherkennung*. Wählen Sie **Erkunden der Echtzeit-Spracherkennung** aus.
 
     ![Erste Schritte mit Speech](media/recognize-synthesize-speech/try-out-speech-to-text.png)
 

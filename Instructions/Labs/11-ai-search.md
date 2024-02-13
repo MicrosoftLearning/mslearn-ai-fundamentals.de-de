@@ -183,7 +183,7 @@ Nachdem Sie die Dokumente im gespeichert haben, können Sie Azure KI-Suche verw
     - Führt das Skillset für kognitive Skills aus, um weitere angereicherte Felder zu generieren.
     - Zuordnen der extrahierten Felder zum Index
 
-1. Wählen Sie in der unteren Hälfte der **Übersichtsseite** Ihrer Azure KI-Suche-Ressource die Registerkarte **Indexer** aus. Auf dieser Registerkarte wird der neu erstellte Indexer **coffee-indexer**angezeigt. Warten Sie eine Minute, und wählen Sie **&orarr;Aktualisieren** aus, bis der **Status** „Erfolgreich“ angezeigt wird.
+1. Kehren Sie zur Azure AI Search-Ressourcenseite zurück. Wählen Sie im linken Bereich unter **Suchverwaltung** **Indexer** aus. Wählen Sie den neu erstellten **Kaffeeindexer** aus. Warten Sie eine Minute, und wählen Sie **&orarr;Aktualisieren** aus, bis der **Status** „Erfolgreich“ angezeigt wird.
 
 1. Wählen Sie den Indexernamen aus, um weitere Details anzuzeigen.
 
@@ -197,21 +197,40 @@ Verwenden Sie den Suchexplorer zum Schreiben und Testen von Abfragen. Der Suchex
 
    ![Screenshot: So finden Sie den Suchexplorer.](media/create-cognitive-search-solution/5-exercise-screenshot-7.png)
 
-1. Beachten Sie, dass der ausgewählte Index der *coffee-index* ist, den Sie erstellt haben.
+2. Beachten Sie, dass der ausgewählte Index der *coffee-index* ist, den Sie erstellt haben. Ändern Sie unter dem ausgewählten Index die *Ansicht* in **JSON-Ansicht**. 
 
     ![Screenshot: Der Such-Explorer](media/create-cognitive-search-solution/search-explorer-query.png)
 
-    Geben Sie im Feld **Abfragezeichenfolge** `search=*&$count=true` ein, und wählen Sie dann **Suchen** aus. Die Suchabfrage gibt alle Dokumente im Suchindex zurück, einschließlich einer Angabe der Anzahl aller Dokumente im Feld **@odata.count**. Der Suchindex sollte ein JSON-Dokument mit Ihren Suchergebnissen zurückgeben.
+Kopieren Sie Folgendes und fügen Sie es im Feld des **JSON-Abfrage-Editors** ein: 
+```json
+{
+    "search": "*",
+    "count": true
+}
+```
+3. Klicken Sie auf **Suchen**. Die Suchabfrage gibt alle Dokumente im Suchindex zurück, einschließlich einer Angabe der Anzahl aller Dokumente im Feld **@odata.count**. Der Suchindex sollte ein JSON-Dokument mit Ihren Suchergebnissen zurückgeben.
 
-    > **Hinweis**: Wenn eine Meldung **Um im Portal zu suchen, lassen Sie den Portalursprung in Ihren Index-CORS-Einstellungen zu** angezeigt wird, wählen Sie **Portal zulassen** und dann **Suchen** aus.
+4. Filtern Sie nun nach Standort. Kopieren Sie Folgendes und fügen Sie es im Feld des **JSON-Abfrage-Editors** ein: 
+```json
+{
+    "search": "locations:'Chicago'",
+    "count": true
+}
+```
+5. Klicken Sie auf **Suchen**. Die Abfrage durchsucht alle Dokumente im Index und filtert nach Bewertungen mit dem Standort „Chicago“. Im Feld `@odata.count` sollte `3` angezeigt werden.
 
-1. Filtern Sie nun nach Standort. Geben Sie im Feld **Abfragezeichenfolge**`search=locations:'Chicago'` ein, und wählen Sie dann **Suchen** aus. Die Abfrage durchsucht alle Dokumente im Index und filtert nach Bewertungen mit dem Standort „Chicago“.
-
-1. Nun filtern Sie nach Stimmung. Geben Sie im Feld **Abfragezeichenfolge**`search=sentiment:'negative'` ein, und wählen Sie dann **Suchen** aus. Die Abfrage durchsucht alle Dokumente im Index und filtert nach Bewertungen mit einer negativen Stimmung.
+6. Nun filtern Sie nach Stimmung. Kopieren Sie Folgendes und fügen Sie es im Feld des **JSON-Abfrage-Editors** ein: 
+```json
+{
+    "search": "sentiment:'negative'",
+    "count": true
+}
+```
+7. Klicken Sie auf **Suchen**. Die Abfrage durchsucht alle Dokumente im Index und filtert nach Bewertungen mit einer negativen Stimmung. Im Feld `@odata.count` sollte `1` angezeigt werden.
 
    > **Hinweis**: Schauen Sie sich an, wie die Ergebnisse nach `@search.score` sortiert werden. Dies ist die von der Suchmaschine zugewiesene Bewertung, die zeigt, wie genau die Ergebnisse mit der angegebenen Abfrage übereinstimmen.
 
-1. Eines der Probleme, das wir lösen müssen, ist die Frage, warum es bestimmte Bewertungen geben kann. Sehen wir uns die Schlüsselbegriffe an, die mit den negativen Bewertungen zusammenhängen. Was kann Ihrer Meinung nach der Grund für diese Bewertung sein?
+8. Eines der Probleme, das wir lösen müssen, ist die Frage, warum es bestimmte Bewertungen geben kann. Sehen wir uns die Schlüsselbegriffe an, die mit den negativen Bewertungen zusammenhängen. Was kann Ihrer Meinung nach der Grund für diese Bewertung sein?
 
 ## Überprüfen des Wissensspeichers
 
@@ -219,36 +238,36 @@ Sehen wir uns die Möglichkeiten des Wissensspeichers in der Praxis an. Beim Aus
 
 1. Navigieren Sie im Azure-Portal zurück zu Ihrem Azure-Speicherkonto.
 
-1. Wählen Sie im linken Menübereich **Container** aus. Wählen Sie den Container **knowledge-store** aus.
+2. Wählen Sie im linken Menübereich **Container** aus. Wählen Sie den Container **knowledge-store** aus.
 
     ![Screenshot des Containers „knowledge-store“.](media/create-cognitive-search-solution/knowledge-store-blob-0.png)
 
-1. Wählen Sie eines der Elemente aus, und klicken Sie dann auf die Datei **objectprojection.json**.
+3. Wählen Sie eines der Elemente aus, und klicken Sie dann auf die Datei **objectprojection.json**.
 
     ![Screenshot: Die Datei „objectprojection.json“](media/create-cognitive-search-solution/knowledge-store-blob-1.png)
 
-1. Wählen Sie **Bearbeiten** aus, um die JSON-Datei anzuzeigen, die für eines der Dokumente aus Ihrem Azure-Datenspeicher erstellt wurde.
+4. Wählen Sie **Bearbeiten** aus, um die JSON-Datei anzuzeigen, die für eines der Dokumente aus Ihrem Azure-Datenspeicher erstellt wurde.
 
     ![Screenshot: Lage der Schaltfläche „Bearbeiten“](media/create-cognitive-search-solution/knowledge-store-blob-2.png)
 
-1. Wählen Sie oben links auf dem Bildschirm die Breadcrumb-Leiste des Speicherblobs aus, um zu *Container* des Speicherkontos zurückzukehren.
+5. Wählen Sie oben links auf dem Bildschirm die Breadcrumb-Leiste des Speicherblobs aus, um zu *Container* des Speicherkontos zurückzukehren.
 
     ![Screenshot: Brotkrümel-Leiste des Speicherblobs](media/create-cognitive-search-solution/knowledge-store-blob-4.png)
 
-1. Wählen Sie unter *Container* den Container *coffee-skillset-image-projection* aus. Wählen Sie eines der Elemente aus.
+6. Wählen Sie unter *Container* den Container *coffee-skillset-image-projection* aus. Wählen Sie eines der Elemente aus.
 
     ![Screenshot: Der Skillsetcontainer](media/create-cognitive-search-solution/knowledge-store-blob-5.png)
 
-1. Wählen Sie eine der *JPG*-Dateien aus. Wählen Sie **Bearbeiten** aus, um das aus dem Dokument gespeicherte Bild anzuzeigen. Beachten Sie, dass alle Bilder aus den Dokumenten auf diese Weise gespeichert werden.
+7. Wählen Sie eine der *JPG*-Dateien aus. Wählen Sie **Bearbeiten** aus, um das aus dem Dokument gespeicherte Bild anzuzeigen. Beachten Sie, dass alle Bilder aus den Dokumenten auf diese Weise gespeichert werden.
 
     ![Screenshot des gespeicherten Bilds.](media/create-cognitive-search-solution/knowledge-store-blob-3.png)
 
-1. Wählen Sie oben links auf dem Bildschirm die Breadcrumb-Leiste des Speicherblobs aus, um zu *Container* des Speicherkontos zurückzukehren.
+8. Wählen Sie oben links auf dem Bildschirm die Breadcrumb-Leiste des Speicherblobs aus, um zu *Container* des Speicherkontos zurückzukehren.
 
-1. Wählen Sie im linken Bereich **Speicherbrowser** und dann **Tabellen** aus. Im Index befindet sich eine Tabelle für jede Entität. Wählen Sie die Tabelle *coffeeSkillsetKeyPhrases* aus.
+9. Wählen Sie im linken Bereich **Speicherbrowser** und dann **Tabellen** aus. Im Index befindet sich eine Tabelle für jede Entität. Wählen Sie die Tabelle *coffeeSkillsetKeyPhrases* aus.
 
     Sehen Sie sich die Schlüsselbegriffe an, die der Wissensspeicher aus dem Inhalt der Bewertungen erfassen konnte. Viele der Felder sind Schlüssel, sodass Sie die Tabellen wie eine relationale Datenbank verknüpfen können. Im letzten Feld werden die Schlüsselbegriffe angezeigt, die vom Skillset extrahiert wurden.
 
 ## Weitere Informationen
 
-Dieser einfache Suchindex bietet nur einige der Funktionen des Azure KI-Suchdiensts. Weitere Informationen zu den Möglichkeiten dieses Diensts finden Sie auf der Seite [Azure KI-Suchdienst](/azure/search/search-what-is-azure-search).
+Dieser einfache Suchindex bietet nur einige der Funktionen des Azure KI-Suchdiensts. Weitere Informationen zu den Möglichkeiten dieses Diensts finden Sie auf der Seite [Azure KI-Suchdienst](https://learn.microsoft.com/azure/search).
