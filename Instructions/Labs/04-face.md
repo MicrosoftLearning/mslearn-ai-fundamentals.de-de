@@ -20,7 +20,7 @@ Sie können den Azure KI Gesichtserkennungsdienst mit einer **Azure KI Service
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Region:** USA, Osten.
     - **Name**: *Geben Sie einen eindeutigen Namen ein*.
-    - **Tarif**: *Standard S0.*
+    - **Tarif**: *Standard S0.*
     - **Durch Aktivieren dieses Kontrollkästchens bestätige ich, dass ich die folgenden Bedingungen gelesen und verstanden habe**: *Ausgewählt*.
 
 1. Wählen Sie die Option **Überprüfen und erstellen** und dann **Erstellen** aus, und warten Sie, bis die Bereitstellung abgeschlossen ist.
@@ -73,15 +73,15 @@ Verbinden Sie als Nächstes die oben bereitgestellte Azure KI Services-Ressourc
 
     ![Ein Bild von Menschen in einem Geschäft und einer Pflanze, die ein Gesicht verdeckt.](./media/create-face-solutions/store-camera-3.jpg)
 
-1. Laden Sie **store-camera-2.jpg** hoch, und überprüfen Sie die zurückgegebenen Gesichtserkennungsdetails. Beachten Sie, wie Azure KI Gesichtserkennung Gesichter erkennen kann, die teilweise verdeckt sind. 
+1. Laden Sie **store-camera-3.jpg** hoch, und überprüfen Sie die zurückgegebenen Gesichtserkennungsdetails. Beachten Sie, dass die Gesichtserkennung von Azure KI das verdeckte Gesicht nicht erkannt hat.
 
 In dieser Übung haben Sie untersucht, wie Azure KI Services Gesichter in Bildern erkennen kann. Wenn Sie Zeit haben, können Sie die Beispielbilder oder einige Ihrer eigenen Bilder ausprobieren.
 
 ## Bereinigung
 
-Wenn Sie nicht vorhaben, weitere Übungen zu bearbeiten, löschen Sie alle Ressourcen, die Sie nicht mehr benötigen. Dadurch werden unnötige Kosten vermieden.
+Wenn Sie nicht vorhaben, weitere Übungen zu machen, löschen Sie alle Ressourcen, die Sie nicht mehr benötigen. Dadurch werden unnötige Kosten vermieden.
 
-1. Öffnen Sie das **Azure-Portal** unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und wählen Sie die Ressourcengruppe aus, die die von Ihnen erstellte Ressource enthält.
+1. Öffnen Sie das **Azure-Portal** auf [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und wählen Sie die Ressourcengruppe aus, die die von Ihnen erstellte Ressource enthält.
 1. Wählen Sie die Ressource, dann **Löschen** und anschließend **Ja** aus, um den Löschvorgang zu bestätigen. Die Ressource wird dann gelöscht.
 
 ## Weitere Informationen
