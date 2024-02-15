@@ -36,7 +36,7 @@ Lassen Sie Dokument Intelligenz Studio geöffnet.
 Sie sind jetzt bereit, eine Quittung für das fiktive Northwind Traders Einzelhandelsunternehmen zu analysieren.
 
 1. Wählen Sie [**https://aka.ms/mslearn-receipt**](https://aka.ms/mslearn-receipt) aus, um ein Beispieldokument auf Ihren Computer herunterzuladen. Öffnen Sie den Ordner . 
-1. Wählen Sie **Formularerkennung Studio** aus, um zur Seite **Erste Schritte mit Dokument Intelligenz Studio** zurückzukehren, und wählen Sie unter „Receipts“ **Ausprobieren** aus.
+1. Wählen Sie **Dokument Intelligenz Studio** aus, um zur Seite **Erste Schritte mit Dokument Intelligenz Studio** zurückzukehren, und wählen Sie unter „Receipts“ **Ausprobieren** aus.
 1. Stellen Sie in der Dropdownliste „Prebuilt“ sicher, dass **Receipts** ausgewählt ist.
 1. Wählen Sie **Nach einer Datei suchen** aus, und navigieren Sie zu dem Ordner, in dem Sie das Bild gespeichert haben. Wählen Sie das Bild der Quittung und dann **Öffnen** aus. Das Bild wird auf der linken Seite des Bildschirms angezeigt.
 
