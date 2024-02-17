@@ -1,19 +1,19 @@
 ---
 lab:
-  title: Lesen von Text in Vision Studio
+  title: Erkennen von Gesichtern in Vision Studio
 ---
 
-# Lesen von Text in Vision Studio
+# Erkennen von Gesichtern in Vision Studio
 
-In dieser Übung verwenden Sie den Azure KI-Dienst, um die optischen Zeichenerkennungsfunktionen von Azure KI Vision zu erkunden. Sie werden Vision Studio verwenden, um mit dem Extrahieren von Text aus Bildern zu experimentieren, ohne Code schreiben zu müssen.
+Bei Vision-Lösungen ist häufig KI erforderlich, um menschliche Gesichter erkennen zu können. Angenommen, das fiktive Einzelhandelsunternehmen Northwind Traders möchte herausfinden, wo sich die Kunden in einem Geschäft befinden, um sie bestmöglich zu bedienen. Eine Möglichkeit, dies zu erreichen, besteht darin, festzustellen, ob die Bilder Gesichter gehalten. Wenn dies der Fall ist, werden die Koordinaten des Begrenzungsrahmens ermittelt, der ihre Position angibt.
 
-Maschinelles Sehen wird oft eingesetzt, um in ein Bild eingebetteten Text zu erkennen und zu interpretieren. Dies wird optische Zeichenerkennung (OCR, Optical Character Recognition) genannt. In dieser Übung verwenden Sie eine Azure KI-Dienstressource, die Azure KI Vision-Dienste umfasst. Anschließend verwenden Sie Vision Studio, um OCR mit verschiedenen Typen von Bildern auszuprobieren.
+Um die Gesichtserkennungsfunktionen des Azure KI Gesichtserkennungsdiensts zu testen, verwenden Sie [Azure Vision Studio](https://portal.vision.cognitive.azure.com/). Dabei handelt es sich um eine UI-basierte Plattform, mit der Sie die Funktionen von Azure KI Vision erkunden können, ohne selbst Code schreiben zu müssen.
 
 ## Erstellen einer *Azure KI Services*-Ressource
 
-Sie können die OCR-Funktionen von Azure KI Vision mit einer **Azure KI Services**-Ressource für mehrere Dienste verwenden. Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Ressource in Ihrem Azure-Abonnement.
+Sie können den Azure KI Gesichtserkennungsdienst mit einer **Azure KI Services**-Ressource für mehrere Dienste verwenden. Wenn dies noch nicht erfolgt ist, erstellen Sie eine **Azure KI Services**-Ressource in Ihrem Azure-Abonnement.
 
-1. Öffnen Sie auf einer neuen Browserregisterkarte das **Azure-Portal** unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit dem Microsoft-Konto an, das Ihrem Azure-Abonnement zugeordnet ist.
+1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit dem Microsoft-Konto an, das Ihrem Azure-Abonnement zugeordnet ist.
 
 1. Klicken Sie auf die Schaltfläche **＋Ressource erstellen** und suchen Sie nach *Azure KI Services*. Wählen Sie **Erstellen** eines **Azure KI Services**-Plans aus. Sie werden zu einer Seite weitergeleitet, um eine Azure KI Services-Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
@@ -45,29 +45,37 @@ Verbinden Sie als Nächstes die oben bereitgestellte Azure KI Services-Ressourc
 
 1. Schließen Sie die Einstellungsseite, indem Sie in der oberen rechten Bildschirmecke „x“ auswählen.
 
-## Extrahieren von Text aus Bildern im Vision Studio
-    
+## Erkennen von Gesichtern in Vision Studio 
+
 1. Navigieren Sie in einem Webbrowser zu **Vision Studio** unter [https://portal.vision.cognitive.azure.com](https://portal.vision.cognitive.azure.com?azure-portal=true).
 
-1. Wählen Sie auf der Startseite **Erste Schritte mit Vision** die Option **Optische Zeichenerkennung** und anschließend die Kachel **Text aus Bildern extrahieren** aus.
+1. Wählen Sie auf der Landing Page **Getting started with Vision** die Registerkarte **Face** aus, und wählen Sie dann die Kachel **Detect Faces in an image** aus.
 
 1. Bestätigen Sie unter der Unterüberschrift **Try It Out** die Ressourcennutzungsrichtlinie, indem Sie diese lesen und das Kontrollkästchen aktivieren.  
 
-1. Wählen Sie [**https://aka.ms/mslearn-ocr-images**](https://aka.ms/mslearn-ocr-images) aus, um **ocr-images.zip**herunterzuladen. Öffnen Sie dann den Ordner.
+1. Wählen Sie die einzelnen Beispielbilder aus, und beobachten Sie die zurückgegebenen Gesichtserkennungsdaten.
 
-1. Wählen Sie im Portal **Nach einer Datei suchen** aus, und navigieren Sie zu dem Ordner auf Ihrem Computer, in den Sie **ocr-images.zip** heruntergeladen haben. Wählen Sie **advert.jpg** und dann **Öffnen**aus.
+1. Jetzt probieren wir die Funktion mit einigen unserer eigenen Bilder aus. Wählen Sie [**https://aka.ms/mslearn-detect-faces**](https://aka.ms/mslearn-detect-faces) aus, um **detect-faces.zip** herunterzuladen. Wählen Sie einen lokalen Ordner auf Ihrem Computer aus.
 
-1. Überprüfen Sie nun, was zurückgegeben wird:
-    - Unter **Erkannte Attribute** wird der im Bild gefundene Text in einer hierarchischen Struktur von Regionen, Zeilen und Wörtern angeordnet.
-    - Auf dem Bild wird die Position des Texts durch einen Begrenzungsrahmen angegeben, wie hier gezeigt:
+1. Suchen Sie die Datei namens **store-camera-1.jpg**, die das folgende Bild enthält:
 
-    ![Eine Abbildung des Texts, der auf dem Bild umrandet ist.](media/read-text-computer-vision/text-bounding-boxes.png)
+    ![Ein Bild von Personen in einem Geschäft.](./media/create-face-solutions/store-camera-1.jpg)
 
-1. Sie können jetzt ein anderes Bild ausprobieren. Wählen Sie **Nach einer Datei suchen** aus, und navigieren Sie zu dem Ordner, in dem Sie die Dateien aus GitHub gespeichert haben. Wählen Sie **letter.jpg** aus.
+1. Laden Sie **store-camera-1.jpg** hoch, und überprüfen Sie die zurückgegebenen Gesichtserkennungsdetails.
 
-    ![Ein Bild eines getippten Briefs.](media/read-text-computer-vision/letter.jpg)
+1. Suchen Sie die Datei namens **store-camera-2.jpg**, die das folgende Bild enthält:
 
-1. Überprüfen Sie die Ergebnisse für das zweite Bild. Der Text und die Begrenzungsrahmen des Texts sollten zurückgegeben werden. Wenn Sie Zeit haben, probieren Sie **note.jpg** und **receipt.jpg** aus.
+    ![Ein Bild mit mehreren Personen in einem Geschäft.](./media/create-face-solutions/store-camera-2.jpg)
+
+1. Laden Sie **store-camera-2.jpg** hoch, und überprüfen Sie die zurückgegebenen Gesichtserkennungsdetails.
+
+1. Suchen Sie die Datei namens **store-camera-3.jpg**, die das folgende Bild enthält:
+
+    ![Ein Bild von Menschen in einem Geschäft und einer Pflanze, die ein Gesicht verdeckt.](./media/create-face-solutions/store-camera-3.jpg)
+
+1. Laden Sie **store-camera-3.jpg** hoch, und überprüfen Sie die zurückgegebenen Gesichtserkennungsdetails. Beachten Sie, dass die Gesichtserkennung von Azure KI das verdeckte Gesicht nicht erkannt hat.
+
+In dieser Übung haben Sie untersucht, wie Azure KI Services Gesichter in Bildern erkennen kann. Wenn Sie Zeit haben, können Sie die Beispielbilder oder einige Ihrer eigenen Bilder ausprobieren.
 
 ## Bereinigung
 
@@ -78,4 +86,4 @@ Wenn Sie nicht vorhaben, weitere Übungen zu machen, löschen Sie alle Ressource
 
 ## Weitere Informationen
 
-Weitere Informationen zu den Möglichkeiten dieses Dienstes finden Sie in der Dokumentation zu Azure KI Vision unter [Optische Zeichenerkennung](https://learn.microsoft.com/azure/ai-services/computer-vision/overview-ocr).
+Weitere Informationen über die Möglichkeiten dieses Diensts erfahren Sie auf der Seite [Azure KI Gesichtserkennung](https://learn.microsoft.com/azure/ai-services/computer-vision/overview-identity).
