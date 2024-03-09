@@ -26,9 +26,22 @@ Bevor Sie Azure OpenAI-Modelle verwenden können, müssen Sie eine Azure OpenAI-
 2. Erstellen Sie eine **Azure OpenAI-Ressource** mit den folgenden Einstellungen:
     - **Abonnement:** *Ein Azure-Abonnement, das für den Zugriff auf Azure OpenAI Service freigegeben wurde.*
     - **Ressourcengruppe:** *Wählen Sie entweder eine bereits vorhandene Ressourcengruppe, oder erstellen Sie eine mit einem Namen Ihrer Wahl.*
-    - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
-    - **Name:** *Ein eindeutiger Namen Ihrer Wahl.*
+    - **Region:** *Treffen Sie eine **zufällige** Auswahl aus einer der folgenden Regionen*\*
+        - Australien (Osten)
+        - Kanada, Osten
+        - East US
+        - USA (Ost) 2
+        - Frankreich, Mitte
+        - Japan, Osten
+        - USA Nord Mitte
+        - Schweden, Mitte
+        - Schweiz, Norden
+        - UK, Süden
+    - **Name:** *Wählen Sie einen Namen Ihrer Wahl aus.*
     - **Tarif**: Standard S0.
+
+    > \* Azure OpenAI-Ressourcen werden durch regionale Kontingente eingeschränkt. Die aufgeführten Regionen enthalten das Standardkontingent für die in dieser Übung verwendeten Modelltypen. Durch die zufällige Auswahl einer Region wird das Risiko reduziert, dass eine einzelne Region ihr Kontingentlimit in Szenarien erreicht, in denen Sie ein Abonnement für andere Benutzer freigeben. Wenn später in der Übung ein Kontingentlimit erreicht wird, besteht eventuell die Möglichkeit, eine andere Ressource in einer anderen Region zu erstellen.
+
 3. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zur bereitgestellten Azure OpenAI-Ressource im Azure-Portal.
 
 ## Bereitstellen eines Modells
@@ -39,7 +52,14 @@ Jetzt können Sie ein Modell bereitstellen, das über **Azure OpenAI Studio** ve
 2. Erstellen Sie in Azure OpenAI Studio eine neue Bereitstellung mit den folgenden Einstellungen:
     - **Modell**: gpt-35-turbo
     - **Modellversion**: Automatische Aktualisierung auf die Standardeinstellung
-    - **Bereitstellungsname**: 35turbo
+    - **Bereitstellungsname**: *Ein eindeutiger Name Ihrer Wahl*
+    - **Erweiterte Optionen**
+        - **Inhaltsfilter**: Standard
+        - **Bereitstellungstyp**: Standard
+        - **Ratenlimit für Token pro Minute**: 5K\*
+        - **Dynamisches Kontingent aktivieren**: Aktiviert
+
+    > \* Ein Ratenlimit von 5.000 Token pro Minute ist mehr als ausreichend, um diese Aufgabe zu erfüllen und gleichzeitig Kapazität für andere Personen zu schaffen, die das gleiche Abonnement nutzen.
 
 > **Hinweis**: Jedes Azure OpenAI-Modell ist für ein anderes Verhältnis von Funktionen und Leistung optimiert. Wir verwenden das Modell **GPT 3.5 Turbo** in dieser Übung, das sich in hohem Maße für Szenarien zur Generierung natürlicher Sprache und Chatszenarien eignet.
 

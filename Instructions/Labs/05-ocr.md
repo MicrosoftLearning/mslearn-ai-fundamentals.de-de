@@ -61,7 +61,7 @@ Verbinden Sie als Nächstes die oben bereitgestellte Azure KI Services-Ressourc
     - Unter **Erkannte Attribute** wird der im Bild gefundene Text in einer hierarchischen Struktur von Regionen, Zeilen und Wörtern angeordnet.
     - Auf dem Bild wird die Position des Texts durch einen Begrenzungsrahmen angegeben, wie hier gezeigt:
 
-    ![Eine Abbildung des Texts, der auf dem Bild umrandet ist.](media/read-text-computer-vision/text-bounding-boxes.png)
+    ![Eine Abbildung des Texts, der auf dem Bild umrandet ist.](media/read-text-computer-vision/advert-bounding-boxes.jpg)
 
 1. Sie können jetzt ein anderes Bild ausprobieren. Wählen Sie **Nach einer Datei suchen** aus, und navigieren Sie zu dem Ordner, in dem Sie die Dateien aus GitHub gespeichert haben. Wählen Sie **letter.jpg** aus.
 

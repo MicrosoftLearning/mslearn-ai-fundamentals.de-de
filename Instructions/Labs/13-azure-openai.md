@@ -25,10 +25,13 @@ Bevor Sie Azure OpenAI-Modelle verwenden können, müssen Sie eine Azure OpenAI-
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 2. Erstellen Sie eine **Azure OpenAI-Ressource** mit den folgenden Einstellungen:
     - **Abonnement:** *Ein Azure-Abonnement, das für den Zugriff auf Azure OpenAI Service freigegeben wurde.*
-    - **Ressourcengruppe:** *Wählen Sie entweder eine bereits vorhandene Ressourcengruppe oder erstellen Sie eine mit einem Namen Ihrer Wahl.*
-    - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
-    - **Name:** *Ein eindeutiger Namen Ihrer Wahl.*
+    - **Ressourcengruppe:** *Wählen Sie entweder eine bereits vorhandene Ressourcengruppe, oder erstellen Sie eine mit einem Namen Ihrer Wahl.*
+    - **Region:** USA, Osten\*
+    - **Name:** *Wählen Sie einen Namen Ihrer Wahl aus.*
     - **Tarif**: Standard S0.
+
+    > \* Unterschiedliche Regionen weisen unterschiedliche Verfügbarkeiten und Kontingente für Modelle auf. In dieser Übung verwenden Sie ein GPT-35-Turbo-Modell für die Textgenerierung und ein DALL-E-Modell für die Bildgenerierung, die beide in USA, Osten unterstützt werden. 
+
 3. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zur bereitgestellten Azure OpenAI-Ressource im Azure-Portal.
 
 ## Erkunden von Azure OpenAI Studio
@@ -58,6 +61,13 @@ Um mit der Generierung natürlicher Sprachen zu experimentieren, müssen Sie zue
     - **Modell**: gpt-35-turbo
     - **Modellversion**: Automatische Aktualisierung auf die Standardeinstellung
     - **Bereitstellungsname:** *Ein eindeutiger Name für die Modellimplementierung*
+    - **Erweiterte Optionen**
+        - **Inhaltsfilter**: Standard
+        - **Bereitstellungstyp**: Standard
+        - **Ratenlimit für Token pro Minute**: 5K\*
+        - **Dynamisches Kontingent aktivieren**: Aktiviert
+
+    > \* Ein Ratenlimit von 5.000 Token pro Minute ist mehr als ausreichend, um diese Aufgabe zu erfüllen und gleichzeitig Kapazität für andere Personen zu schaffen, die das gleiche Abonnement nutzen.
 
 ## Verwenden des *Chat*-Playgrounds zum Arbeiten mit dem Modell
 
