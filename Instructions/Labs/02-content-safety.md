@@ -29,28 +29,28 @@ Bevor Sie das Studio verwenden, müssen Sie dem Studio eine Azure KI Services-Re
 
 ![Ein Screenshot des Symbols „Einstellungen“ oben rechts auf dem Bildschirm, neben den Symbolen Glocke, Fragezeichen und Smiley.](./media/content-safety/settings-toggle.png)
 
-1. Auf der Seite **Einstellungen** werden die Registerkarten *Verzeichnis* und *Ressource* angezeigt. Wählen Sie auf der Registerkarte *Ressource* die Option **Neue Ressource erstellen** aus. Dadurch gelangen Sie zur Seite, um eine Ressource im Azure-Portal zu erstellen.
+2. Auf der Seite **Einstellungen** werden die Registerkarten *Verzeichnis* und *Ressource* angezeigt. Wählen Sie auf der Registerkarte *Ressource* die Option **Neue Ressource erstellen** aus. Dadurch gelangen Sie zur Seite, um eine Ressource im Azure-Portal zu erstellen.
 
 > **Hinweis**: Auf der Registerkarte *Verzeichnis* können Benutzer verschiedene Verzeichnisse auswählen, aus denen Ressourcen erstellt werden sollen. Sie müssen die Einstellungen nicht ändern, es sei denn, Sie möchten ein anderes Verzeichnis verwenden. 
 
 ![Screenshot der Stelle auf der Einstellungsseite von Content Safety Studio, an der Sie „Neue Ressource erstellen“ auswählen können.](./media/content-safety/create-new-resource-from-studio.png)
 
-1. Auf der Seite *Content Safety erstellen* im [Azure-Portal](https://portal.azure.com?auzre-portal=true) müssen Sie mehrere Details konfigurieren, um Ihre Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
+3. Auf der Seite *Content Safety erstellen* im [Azure-Portal](https://portal.azure.com?azure-portal=true) müssen Sie mehrere Details konfigurieren, um Ihre Ressource zu erstellen. Konfigurieren Sie sie mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
-    - **Region**: *Wählen Sie eine beliebige verfügbare Region aus.*
+    - **Region:** *Wählen Sie eine verfügbare Region aus. Wenn Sie sich im Osten der USA befinden, verwenden Sie „USA, Osten 2“.*
     - **Name**: *Geben Sie einen eindeutigen Namen ein*.
     - **Tarif**: Free F0
 
-1. Wählen Sie **Überprüfen + Erstellen** aus und überprüfen Sie die Konfiguration. Wählen Sie dann **Erstellen** aus. Auf dem Bildschirm wird angezeigt, wann die Bereitstellung abgeschlossen ist. 
+4. Wählen Sie **Überprüfen + Erstellen** aus und überprüfen Sie die Konfiguration. Wählen Sie dann **Erstellen** aus. Auf dem Bildschirm wird angezeigt, wann die Bereitstellung abgeschlossen ist. 
 
 *Glückwunsch! Sie haben gerade eine Azure KI Services-Ressource erstellt oder bereitgestellt. Die von Ihnen bereitgestellte Ressource ist eine Single-Service Content Safety Service-Ressource.*
 
-1. Öffnen Sie nach Abschluss der Bereitstellung eine neue Registerkarte und kehren Sie zu [Content Safety Studio](https://contentsafety.cognitive.azure.com?azure-portal=true) zurück. 
+5. Öffnen Sie nach Abschluss der Bereitstellung eine neue Registerkarte und kehren Sie zu [Content Safety Studio](https://contentsafety.cognitive.azure.com?azure-portal=true) zurück. 
 
-1. Wählen Sie erneut das Symbol **Einstellungen** in der rechten oberen Ecke des Bildschirms aus. Dieses Mal sollten Sie sehen, dass Ihre neu erstellte Ressource der Liste hinzugefügt wurde.  
+6. Wählen Sie erneut das Symbol **Einstellungen** in der rechten oberen Ecke des Bildschirms aus. Dieses Mal sollten Sie sehen, dass Ihre neu erstellte Ressource der Liste hinzugefügt wurde.  
 
-1. Wählen Sie auf der Seite Einstellungen von Content Safety Studio die soeben erstellte Azure KI Service-Ressource aus und klicken Sie unten auf dem Bildschirm auf **Ressource verwenden**. Sie werden zur Studio-Startseite zurückgeleitet. Jetzt können Sie mit der Verwendung von Studio mit Ihrer neu erstellten Ressource beginnen.
+7. Wählen Sie auf der Seite Einstellungen von Content Safety Studio die soeben erstellte Azure KI Service-Ressource aus und klicken Sie unten auf dem Bildschirm auf **Ressource verwenden**. Sie werden zur Studio-Startseite zurückgeleitet. Jetzt können Sie mit der Verwendung von Studio mit Ihrer neu erstellten Ressource beginnen.
 
 ## Testen der Textmoderation im Content Safety Studio
 

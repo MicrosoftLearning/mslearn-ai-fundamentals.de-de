@@ -36,7 +36,7 @@ Die Lösung, die Sie für Fourth Coffee erstellen, erfordert die folgenden Resso
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Dienstname**: *Ein eindeutiger Name*.
-    - **Standort**: *Wählen Sie eine beliebige verfügbare Region aus*.
+    - **Speicherort:** *Wählen Sie eine verfügbare Region aus. Wenn Sie sich im Osten der USA befinden, verwenden Sie „USA, Osten 2“.*
     - **Tarif**: Basic
 
 1. Wählen Sie **Überprüfen + erstellen** aus, und wählen Sie nach der Anzeige der Antwort **Überprüfung erfolgreich** die Option **Erstellen** aus.

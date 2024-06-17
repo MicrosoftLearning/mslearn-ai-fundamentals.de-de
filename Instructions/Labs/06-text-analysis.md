@@ -24,7 +24,7 @@ Sie können viele Azure KI Language-Features entweder mit einer **Sprach-** ode
 1. Konfigurieren Sie sie auf der Seite **Sprache erstellen** mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
-    - **Region:** USA, Osten.
+    - **Region:** *Wählen Sie die geografisch nächstgelegene Region aus. Wenn Sie sich im Osten der USA befinden, verwenden Sie „USA, Osten 2“.*
     - **Name**: *Geben Sie einen eindeutigen Namen ein*.
     - **Tarif**: *Free F0 oder S, wenn Free F0 nicht verfügbar ist*
     - **Durch Aktivieren dieses Kontrollkästchens bestätige ich, dass ich die folgenden Bedingungen gelesen und verstanden habe**: *Ausgewählt*.

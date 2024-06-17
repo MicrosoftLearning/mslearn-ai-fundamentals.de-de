@@ -11,16 +11,16 @@ In dieser Übung verwenden Sie Language Studio, um ein Projekt zu erstellen und 
 
 ## Erstellen einer *Language*-Ressource
 
-Sie können viele Azure KI Language-Features entweder mit einer **Sprach-** oder **Azure KI Services**-Ressource verwenden. Es gibt einige Instanzen, in denen nur eine Sprachressource verwendet werden kann. Für die nachstehende Übung verwenden wir eine **Sprachressource**. Falls noch nicht erfolgt, erstellen Sie in Ihrem Azure-Abonnement eine **Language**-Ressource.
+Sie können viele Azure KI Language-Features entweder mit einer **Sprach-** oder **Azure KI Services**-Ressource verwenden. Es gibt einige Instanzen, in denen nur eine Sprachressource verwendet werden kann. Für die nachstehende Übung verwenden wir eine **Sprachressource**. Falls noch nicht erfolgt, erstellen Sie in Ihrem Azure-Abonnement eine **Language**-Ressource.
 
-1. Öffnen Sie in einem anderen Browsertab das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit dem Microsoft-Konto an, das Ihrem Azure-Abonnement zugeordnet ist.
+1. Öffnen Sie auf einer anderen Browserregisterkarte das Azure-Portal auf [https://portal.azure.com](https://portal.azure.com?azure-portal=true), und melden Sie sich mit dem Microsoft-Konto an, das Ihrem Azure-Abonnement zugeordnet ist.
 
 1. Klicken Sie auf die Schaltfläche **&#65291;Ressource erstellen** und suchen Sie nach *Sprachdienst*. Wählen Sie **Erstellen** eines **Sprachdienst**-Plans. Sie werden zu einer Seite umgeleitet, um *Weitere Features auszuwählen**. Behalten Sie die Standardauswahl bei und klicken Sie auf **Weiter, um Ihre Ressource zu erstellen**. 
 
 1. Konfigurieren Sie sie auf der Seite **Sprache erstellen** mit den folgenden Einstellungen:
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
-    - **Region:** USA, Osten.
+    - **Region:** *Wählen Sie die geografisch nächstgelegene Region aus. Wenn Sie sich im Osten der USA befinden, verwenden Sie „USA, Osten 2“.*
     - **Name**: *Geben Sie einen eindeutigen Namen ein*.
     - **Tarif**: *Free F0 oder S, wenn Free F0 nicht verfügbar ist*
     - **Durch Aktivieren dieses Kontrollkästchens bestätige ich, dass ich die folgenden Bedingungen gelesen und verstanden habe**: *Ausgewählt*.
