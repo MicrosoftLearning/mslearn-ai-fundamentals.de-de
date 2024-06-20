@@ -124,7 +124,7 @@ Nachdem Sie die Dokumente im gespeichert haben, können Sie Azure KI-Suche verw
 
 1. Wählen Sie **Weiter: Kognitive Skills hinzufügen (optional)** aus.
 
-1. Wählen Sie im Abschnitt **Cognitive Services anfügen** Ihre Azure KI Services-Ressource aus.  
+1. Wählen Sie im Abschnitt **AI Services anfügen** Ihre Azure KI Services-Ressource aus.  
 
 1. Gehen Sie im Abschnitt **Anreicherungen hinzufügen** folgendermaßen vor:
     - Ändern Sie den **Namen des Skillsets** in **coffee-skillset**.
@@ -156,7 +156,8 @@ Nachdem Sie die Dokumente im gespeichert haben, können Sie Azure KI-Suche verw
     >
     > ![Screenshot: Warnung auf dem Bildschirm der Speicherkontoverbindung mit aktivierter Option „Vorhandene Verbindung auswählen“.](media/create-cognitive-search-solution/6a-azure-cognitive-search-enrichments-warning.png)
     >
-    > 1. Wählen Sie **Vorhandene Verbindung auswählen** aus. Wählen Sie das Speicherkonto aus, das Sie zuvor erstellt haben.
+
+1. Wählen Sie **Vorhandene Verbindung auswählen** aus. Wählen Sie das Speicherkonto aus, das Sie zuvor erstellt haben.
     > 1. Klicken Sie auf **+ Container**, um einen neuen Container namens **knowledge-store** zu erstellen. Legen Sie die Datenschutzebene auf **Privat** fest und wählen Sie **Erstellen** aus.
     > 1. Wählen Sie den Container **knowledge-store** aus, und klicken Sie dann unten auf dem Bildschirm auf **Auswählen**.
 
@@ -166,7 +167,7 @@ Nachdem Sie die Dokumente im gespeichert haben, können Sie Azure KI-Suche verw
 
 1. Stellen Sie sicher, dass der **Schlüssel** auf **metadata_storage_path** festgelegt ist. Lassen Sie **Name der Vorschlagsfunktion** leer, und übernehmen Sie den automatisch ausgefüllten **Suchmodus**.
 
-1. Überprüfen Sie die Standardeinstellungen der Indexfelder. Wählen Sie **filterbar** für alle Felder aus, die bereits standardmäßig ausgewählt sind.
+1. Überprüfen Sie die Standardeinstellungen der Indexfelder. Wählen Sie **filterbar** für alle Felder aus, die bereits standardmäßig ausgewählt sind. Zu den Feldnamen, die als *filterbar* gekennzeichnet werden müssen, gehören: content, locations, keyphrases, sentiment, merged_content, text, layoutText, imageTags und imageCaption.
 
     ![Screenshot: Bereich „Index anpassen“ mit dem eingegebenen Indexnamen und der aktivierten Option „Filterbar“ für ein Standardindexfeld.](media/create-cognitive-search-solution/6a-azure-cognitive-search-customize-index.png)
 
@@ -238,11 +239,11 @@ Sehen wir uns die Möglichkeiten des Wissensspeichers in der Praxis an. Beim Aus
 
 1. Navigieren Sie im Azure-Portal zurück zu Ihrem Azure-Speicherkonto.
 
-2. Wählen Sie im linken Menübereich **Container** aus. Wählen Sie den Container **knowledge-store** aus.
+2. Wählen Sie im linken Menübereich **Container** aus. Wählen Sie den Container **knowledge-store** aus. 
 
     ![Screenshot des Containers „knowledge-store“.](media/create-cognitive-search-solution/knowledge-store-blob-0.png)
 
-3. Wählen Sie eines der Elemente aus, und klicken Sie dann auf die Datei **objectprojection.json**.
+3. Es wird eine Ordnerliste angezeigt. Es gibt einen Ordner für alle Metadaten jedes Überprüfungsdokuments. **Wählen Sie einen der Ordner aus**. Klicken Sie im Ordner auf die Datei **objectprojection.json**.
 
     ![Screenshot: Die Datei „objectprojection.json“](media/create-cognitive-search-solution/knowledge-store-blob-1.png)
 

@@ -40,7 +40,7 @@ Wenn Sie mit der Erkundung von generativer KI beginnen möchten, verwenden Sie C
     How do I setup a new business in New York?
     ```
 
-1. Sehen Sie sich die Antwort an, und stellen Sie bei Bedarf weitere Fragen. Wenn Sie mit der Antwort zufrieden sind, verwenden Sie das Symbol **Kopieren** (&#128461;) unterhalb der Antwort, um sie in die Zwischenablage zu kopieren. Fügen Sie sie in das Word-Dokument ein, markieren Sie den gesamten Text, und wählen Sie dann das Copilot-Symbol aus, um den Text als Tabelle zu visualisieren.
+1. Sehen Sie sich die Antwort an, und stellen Sie bei Bedarf weitere Fragen. Wenn Sie mit der Antwort zufrieden sind, verwenden Sie das Symbol **Kopieren** (&#128461;) unterhalb der Antwort, um sie in die Zwischenablage zu kopieren. Fügen Sie sie in das Word-Dokument ein, markieren Sie den gesamten Text, und wählen Sie dann das Copilot-Symbol unter dem markierten Text aus, um den Text als Tabelle zu visualisieren.
 
     ![Screenshot, in dem Copilot zur Visualisierung von Text im Tabellenformat aufgefordert wird](./media/generative-ai/copilot-rewrite-as-table.png)
 
@@ -77,42 +77,34 @@ Sie haben eine erste Recherche durchgeführt. Nun hilft Copilot Ihnen beim Entwi
 
 1. Wenn die Finanzprognosen im Geschäftsplan nicht als Tabelle formatiert sind, markieren Sie sie, und verwenden Sie Copilot, um die Prognosen als Tabelle zu visualisieren.
 1. Wählen Sie die Tabelle der Finanzprognosen aus, und kopieren Sie sie in die Zwischenablage.
-1. Speichern Sie das Word-Dokument.
+1. Speichern Sie das Word-Dokument, und schließen Sie es.
 
 ## Visualisieren von Finanzprognosen in Copilot für Excel
 
 Sie besitzen nun einen Geschäftsplan und können jetzt Copilot in Excel bitten, einige dieser Daten zu Finanzprognosen für Sie zu visualisieren, damit Sie sie in E-Mails oder Präsentationen für Investoren einfügen können.
 
-1. Öffnen Sie **Excel** auf Ihrem PC, auf dem Microsoft 365 Apps installiert ist, und erstellen Sie eine neue leere Arbeitsmappe. Speichern Sie die Arbeitsmappe umgehend unter **Financial Projetions.xlsx** auf OneDrive, andernfalls funktioniert Copilot nicht.
+1. Öffnen Sie **Excel**, und erstellen Sie eine neue, leere Arbeitsmappe. Speichern Sie die Arbeitsmappe umgehend als **Financial Projections.xlsx** auf OneDrive, andernfalls funktioniert Copilot nicht.
 1. Fügen Sie die Tabelle der Umsatzprognosen aus **Business Idea.docx** in die Excel-Tabellenkalkulation ein, und **formatieren Sie sie als Tabelle**. Gehen Sie hierzu folgendermaßen vor:
     1. Wählen Sie eine **Zelle** innerhalb der Daten aus.
     1. Wählen Sie **Start** und unter „Formatvorlagen“ die Option **Als Tabelle formatieren** aus. 
     1. Wählen Sie ein Format für die Tabelle aus.
     1. Bestätigen Sie im Dialogfeld **Tabelle erstellen** den Zellbereich, oder legen Sie ihn fest.
     1. Markieren Sie, ob die Tabelle Überschriften enthält, und wählen Sie **OK** aus.
-1. Wenn Sie die Umsatzprognosen als Tabelle formatiert haben, öffnen Sie den Bereich „Copilot“ über das Excel-Menüband, und geben Sie den folgenden Prompt ein:
+1. Wenn Sie die Umsatzprognosen als Tabelle formatiert haben, öffnen Sie den Bereich „Copilot“ über die Registerkarte **Start** des Excel-Menübands, und geben Sie den folgenden Prompt ein:
 
     ```
     Suggest ways to visualize these financial projections.
     ```
     
-1. Copilot sollte 1 oder 2 Möglichkeiten zum Visualisieren Ihrer Daten vorschlagen und anbieten, ein PivotChart zu einem neuen Blatt hinzuzufügen.
+1. Copilot sollte eine Möglichkeit zum Visualisieren Ihrer Daten und zum Hinzufügen einer PivotChart zu einer neuen Tabelle vorschlagen.
 
     ![Screenshot: Copilot in Excel zur Visualisierung von Finanzprognosen](./media/generative-ai/copilot-excel-visualize-projections.png)
-
-1. Möglicherweise möchten Sie jedoch weitere Daten im Chart anzeigen, um Änderungen im Vergleich zum Vorjahr anzuzeigen. Geben Sie daher den folgenden Prompt ein, um weitere Daten hinzuzufügen:
-
-    ```
-    Visualize these financial projections in a line chart to show year-over-year revenue and profits.
-    ```
-
-    ![Screenshot: Copilot in Excel zur Visualisierung von Finanzprognosen](./media/generative-ai/copilot-excel-visualize-more.png)
 
 1. Fügen Sie das PivotChart zu einem neuen Blatt hinzu, und öffnen Sie es. Wählen Sie das Chart und dann **Entwurf** aus, um Formatvorlagen anzuwenden, den Diagrammtyp zu ändern und andere Aktionen auszuführen. Am Ende etwa Folgendes angezeigt werden:
 
     ![Screenshot: Copilot in Excel beim Hinzufügen eines PivotChart](./media/generative-ai/copilot-excel-chart-design.png)
 
-1. Speichern Sie die Datei auf OneDrive, und schließen Sie Excel.
+1. Speichern Sie die Arbeitsmappe, und schließen Sie Excel.
 
 Sie haben gerade Daten verwendet, die von Copilot in Word erstellt wurden, um sie in Excel zu visualisieren. In der nächsten Übung werden Sie Copilot in Outlook verwenden, um E-Mails zu der von Ihnen erledigten Arbeit zu verfassen und zu senden.
 
@@ -120,8 +112,14 @@ Sie haben gerade Daten verwendet, die von Copilot in Word erstellt wurden, um si
 
 Sie haben einige Begleitmaterialien erstellt, die Ihnen bei den ersten Schritten mit Ihrem Unternehmen helfen sollen. Jetzt ist es an der Zeit, einen Investor zu finden, um eine Startfinanzierung zu erhalten.
 
-1. Öffnen Sie **Outlook** auf Ihrem PC, auf dem Microsoft 365 Apps installiert ist. Wenn Sie Outlook nicht mit Ihrem Microsoft 365-Konto eingerichtet haben, lesen Sie die Informationen unter [Einrichten und Verwenden von Outlook – Microsoft-Support](https://support.microsoft.com/office/set-up-and-use-outlook-4636f361-d5e3-4a87-9cd4-382858de55fa).
-1. Aktivieren Sie die **neue Outlook-Oberfläche**. Um die neuesten Copilot-Features in Outlook zu erhalten, sollten Sie die Oberfläche „Das neue Outlook“ verwenden. Informationen dazu, welche Version Sie verwenden, finden Sie unter [Microsoft-Support im Abschnitt „Welche Outlook-Version habe ich?“](https://support.microsoft.com/office/what-version-of-outlook-do-i-have-b3a9568c-edb5-42b9-9825-d48d82b2257c).
+1. Öffnen Sie **Outlook**. Richten Sie Outlook mit Ihrem Microsoft 365-Konto ein, wenn Sie dies noch nicht getan haben.
+
+    > **Tipp**: Hilfe hierzu finden Sie unter [Einrichten und Verwenden von Outlook – Microsoft-Support](https://support.microsoft.com/office/set-up-and-use-outlook-4636f361-d5e3-4a87-9cd4-382858de55fa).
+
+1. Wechseln Sie auf der Symbolleiste zur **neuen Outlook**-Oberfläche, wenn sie noch nicht aktiviert ist.
+
+    > **Hinweis:** Um die neuesten Copilot-Features in Outlook zu erhalten, sollten Sie die Oberfläche „Das neue Outlook“ verwenden. Informationen dazu, welche Version Sie verwenden, finden Sie unter [Microsoft-Support im Abschnitt „Welche Outlook-Version habe ich?“](https://support.microsoft.com/office/what-version-of-outlook-do-i-have-b3a9568c-edb5-42b9-9825-d48d82b2257c).
+
 1. Erstellen Sie eine neue E-Mail, und geben Sie in das Feld **An** Ihre eigene E-Mail-Adresse ein.
 1. Sie können mit der Erstellung Ihrer E-Mails über den Bereich „Copilot“ oder direkt im Textkörper der E-Mail beginnen:
 
@@ -160,11 +158,7 @@ Mit der Hilfe von Copilot haben Sie einen Entwurf eines Geschäftsplans für die
 
     ![Screenshot: PowerPoint-Präsentation, die von Copilot auf der Grundlage eines Word-Dokuments erstellt wurde](./media/generative-ai/copilot-powerpoint-create-image.png)
 
-1. Wählen Sie die vorletzte Folie in der Präsentation aus. Fordern Sie dann im Bereich „Copilot“ mithilfe des folgenden Prompts die Erstellung einer neuen Folie an:
-
-    ```
-    Add a slide that describes the benefits of an eco-friendly approach to cleaning. 
-    ```
+1. Wählen Sie die vorletzte Folie in der Präsentation aus. Verwenden Sie dann im Bereich „Copilot“ die Eingabeaufforderung **Folie hinzufügen zu...** zum Erstellen einer neuen Folie zu `the benefits of an eco-friendly approach to cleaning.`.
 
     ![Screenshot: Erstellen einer neuen Folie in der PowerPoint-Präsentation](./media/generative-ai/copilot-powerpoint-add-new-slide.png)
 
