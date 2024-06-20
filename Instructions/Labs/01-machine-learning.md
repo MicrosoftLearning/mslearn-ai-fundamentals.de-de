@@ -9,6 +9,8 @@ In dieser Übung verwenden Sie das Feature für automatisiertes maschinelles Ler
 
 Diese Übung dauert ca. **30** Minuten.
 
+>**Wichtig** Zu diesem Zeitpunkt ist es möglich, ein Modell als Webdienst im Azure Machine Learning Studio zu erstellen und bereitzustellen, aber nicht im Studio zu testen. Daher können alle Schritte bis zum letzten Abschnitt vor der Bereinigung abgeschlossen werden. Wir werden Sie informieren, wenn sich diese Änderungen ändern.
+
 ## Erstellen eines Azure Machine Learning-Arbeitsbereichs
 
 Um Azure Machine Learning verwenden zu können, müssen Sie einen Azure Machine Learning-Arbeitsbereich in Ihrem Azure-Abonnement bereitstellen. Anschließend können Sie Azure Machine Learning Studio verwenden, um mit den Ressourcen in Ihrem Arbeitsbereich zu arbeiten.
@@ -140,6 +142,8 @@ Wenn der Auftrag für automatisiertes maschinelles Lernen abgeschlossen ist, kö
 1. Warten Sie, bis der **Bereitstellungsstatus** in *Erfolgreich* geändert wird. Dies kann 5-10 Minuten dauern.
 
 ## Testen des bereitgestellten Diensts
+
+>**Wichtig** Das Azure Machine Learning Studio unterstützt derzeit nicht den Typ der Dataseterstellung, die für die Verwendung der Bereitstellungstests erforderlich ist. Wir werden Sie informieren, wenn eine Lösung vorhanden ist. 
 
 Jetzt können Sie den bereitgestellten Dienst testen.
 
