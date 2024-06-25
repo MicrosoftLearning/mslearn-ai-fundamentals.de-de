@@ -23,7 +23,7 @@ Sie können Azure KI Dokument Intelligenz verwenden, indem Sie entweder eine *D
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe mit einem eindeutigen Namen*.
     - **Name der neuen Ressource**: *Geben Sie einen eindeutigen Namen ein.*
-    - **Speicherort:** *Wählen Sie eine Region aus*.
+    - **Speicherort:** *Wählen Sie eine Region aus. Wenn Sie sich im Osten der USA befinden, verwenden Sie „USA, Osten 2“.*
     - **Tarif**: *Kostenlose FO (falls verfügbar, andernfalls Standard SO)*.
 1. Wählen Sie **Weiter** und dann **Fertig stellen** aus. Warten Sie, bis die Ressource bereitgestellt wurde.
 
@@ -40,7 +40,7 @@ Sie sind jetzt bereit, eine Quittung für das fiktive Northwind Traders Einzelha
 1. Stellen Sie in der Dropdownliste „Prebuilt“ sicher, dass **Receipts** ausgewählt ist.
 1. Wählen Sie **Nach einer Datei suchen** aus, und navigieren Sie zu dem Ordner, in dem Sie das Bild gespeichert haben. Wählen Sie das Bild der Quittung und dann **Öffnen** aus. Das Bild wird auf der linken Seite des Bildschirms angezeigt.
 
-    ![Northwind-Quittung](media/document-intelligence/northwind-receipt.jpg)
+    ![Screenshot: Northwind-Quittung](media/document-intelligence/receipt.jpg)
 
 1. Wählen Sie auf der rechten Seite **Analyse ausführen** aus.
 1. Wenn die Analyse ausgeführt wurde, werden die Ergebnisse zurückgegeben. Beachten Sie, dass der Dienst bestimmte Datenfelder wie Händlername, Adresse, Telefonnummer und Transaktionsdatum und -uhrzeit sowie die Positionen, Zwischensummen, Steuern und Gesamtbeträge erkannt hat. Neben jedem Feld ist die prozentuale Wahrscheinlichkeit angegeben, dass das Feld richtig ist.

@@ -16,6 +16,6 @@ Die in diesem Kurs verwendeten AI-900-Labs gehören zu den folgenden Modulen:
 | AI-900 Maschinelles Sehen | Bildanalyse in Vision Studio | [Lab-Anweisungen](https://go.microsoft.com/fwlink/?linkid=2250145) |
 | AI-900 Linguistische Datenverarbeitung | Analysieren von Text mit Language Studio | [Lab-Anweisungen](https://go.microsoft.com/fwlink/?linkid=2250314) |
 | AI-900 Dokument Intelligenz | Extrahieren von Formulardaten in Dokument Intelligenz Studio | [Lab-Anweisungen](https://go.microsoft.com/fwlink/?linkid=2250315) |
-| AI-900 Generative KI | Erkunden von generativer KI mit Bing Copilot | [Lab-Anweisungen](https://go.microsoft.com/fwlink/?linkid=2249955) |
+| AI-900 Generative KI | Erkunden von Microsoft Copilot in Microsoft Edge | [Lab-Anweisungen](https://go.microsoft.com/fwlink/?linkid=2249955) |
 
 

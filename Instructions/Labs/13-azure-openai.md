@@ -30,7 +30,7 @@ Bevor Sie Azure OpenAI-Modelle verwenden können, müssen Sie eine Azure OpenAI-
     - **Name:** *Wählen Sie einen Namen Ihrer Wahl aus.*
     - **Tarif**: Standard S0.
 
-    > \* Unterschiedliche Regionen weisen unterschiedliche Verfügbarkeiten und Kontingente für Modelle auf. In dieser Übung verwenden Sie ein GPT-35-Turbo-Modell für die Textgenerierung und ein DALL-E-Modell für die Bildgenerierung, die beide in USA, Osten unterstützt werden. 
+    > \* Unterschiedliche Regionen weisen unterschiedliche Verfügbarkeiten und Kontingente für Modelle auf. In dieser Übung verwenden Sie ein GPT-35-Turbo-Modell für die Textgenerierung und ein DALL-E-Modell für die Bildgenerierung, die beide in „USA, Osten“ unterstützt werden.
 
 3. Warten Sie, bis die Bereitstellung abgeschlossen ist. Wechseln Sie dann zur bereitgestellten Azure OpenAI-Ressource im Azure-Portal.
 

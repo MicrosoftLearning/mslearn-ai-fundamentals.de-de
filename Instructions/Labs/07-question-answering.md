@@ -31,7 +31,7 @@ Um das Feature „Fragen und Antworten“ zu verwenden, benötigen Sie eine **La
         - **Abonnement**: *Ihr Azure-Abonnement*.
         - **Ressourcengruppe**: *Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue.*
     - **Instanzendetails**
-        - **Region:** *Wählen Sie eine Region aus.*      
+        - **Region:** *Wählen Sie eine Region aus. Wenn Sie sich im Osten der USA befinden, verwenden Sie „USA, Osten 2“.*      
         - **Name**: *Ein eindeutiger Name für Ihre Sprachressource*.
         - **Tarif**: S (1.000 Aufrufe pro Minute)
     - **Benutzerdefinierte Fragen und Antworten**
