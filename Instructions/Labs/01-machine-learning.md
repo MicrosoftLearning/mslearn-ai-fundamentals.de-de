@@ -9,8 +9,6 @@ In dieser Übung verwenden Sie das Feature für automatisiertes maschinelles Ler
 
 Diese Übung dauert ca. **30** Minuten.
 
->**Wichtig** Zu diesem Zeitpunkt ist es möglich, ein Modell als Webdienst im Azure Machine Learning Studio zu erstellen und bereitzustellen, aber nicht im Studio zu testen. Daher können alle Schritte bis zum letzten Abschnitt vor der Bereinigung abgeschlossen werden. Wir werden Sie informieren, wenn sich diese Änderungen ändern.
-
 ## Erstellen eines Azure Machine Learning-Arbeitsbereichs
 
 Um Azure Machine Learning verwenden zu können, müssen Sie einen Azure Machine Learning-Arbeitsbereich in Ihrem Azure-Abonnement bereitstellen. Anschließend können Sie Azure Machine Learning Studio verwenden, um mit den Ressourcen in Ihrem Arbeitsbereich zu arbeiten.
@@ -47,8 +45,8 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
 
     **Grundeinstellungen**:
 
-    - **Auftragsname**: mslearn-bike-automl
-    - **Neuer Experimentname:** mslearn-bike-rental
+    - **Auftragsname**: `mslearn-bike-automl`
+    - **Name des neuen Experiments**: `mslearn-bike-rental`
     - **Beschreibung**: Automatisiertes maschinelles Lernen für die Vorhersage des Fahrradverleihs
     - **Tags**: *keine*
 
@@ -57,24 +55,16 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
     - **Tasktyp auswählen**: Regression
     - **Dataset auswählen**: Erstellen Sie ein neues Dataset mit den folgenden Einstellungen:
         - **Datentyp**:
-            - **Name:** bike-rentals
-            - **Beschreibung**: Historische Daten zum Fahrradverleih
-            - **Typ**: Tabellarisch
+            - **Name**: `bike-rentals`
+            - **Beschreibung:** `Historic bike rental data`
+            - **Typ:** Tabelle (mltable)
         - **Datenquelle**:
-            - Wählen Sie **Aus Webdateien** aus
-        - **Web-URL:**
-            - **Web-URL:** `https://aka.ms/bike-rentals`
-            - **Skip data validation** (Datenüberprüfung überspringen): *Nicht auswählen*
-        - **Einstellungen**:
-            - **Dateiformat:** Zeichengetrennt
-            - **Trennzeichen:** Komma
-            - **Codierung:** UTF-8
-            - **Spaltenüberschriften**: Nur erste Datei enthält Header
-            - **Zeilen überspringen:** Keine
-            - **Dataset contains multi-line data** (Dataset enthält mehrzeilige Daten): *Nicht auswählen*
-        - **Schema:**
-            - Alle Spalten einschließen außer **Pfad**
-            - Überprüfen der automatisch erkannten Typen
+            - Klicken Sie auf **Aus lokalen Dateien**
+        - **Zielspeichertyp**:
+            - **Datenspeichertyp**: Azure Blob Storage
+            - **Name**: workspaceblobstore
+        - **MLtable-Auswahl**:
+            - **Ordner hochladen**: *Laden Sie den Ordner herunter, der die beiden Dateien enthält, die Sie aus * `https://aka.ms/bike-rentals` hochladen müssen
 
         Klicken Sie auf **Erstellen**. Nachdem das Dataset erstellt wurde, wählen Sie das Dataset **bike-rentals** aus, um damit fortzufahren, den automatisierten ML-Auftrag zu übermitteln.
 
@@ -84,17 +74,18 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
     - **Dataset:** bike-rentals
     - **Zielspalte**: Verleihe (Integer)
     - **Zusätzliche Konfigurationseinstellungen**:
-        - **Primäre Metrik**: Wurzel der mittleren Fehlerquadratsumme
+        - **Primary metric** (Primäre Metrik): NormalizedRootMeanSquaredError
         - **Bestes Modell erklären**: *Nicht ausgewählt*
+        - **Ensemblestapelung aktivieren**: *Nicht ausgewählt*
         - **Alle unterstützten Modelle verwenden**: <u>Nicht</u> ausgewählt. *Sie beschränken den Auftrag darauf, nur einige bestimmte Algorithmen auszuprobieren*.
         - **Zulässige Modelle**: *Wählen Sie nur **RandomForest** und **LightGBM** aus. Normalerweise sollten Sie so viele Modelle wie möglich ausprobieren, aber jedes hinzugefügte Modell verlängert die Zeitspanne, die zum Ausführen des Auftrags benötigt wird*.
     - **Grenzwerte**: *Erweitern Sie diesen Abschnitt*
-        - **Max. Testversionen**: 3
-        - **Maximale Anzahl gleichzeitiger Testversionen**: 3
-        - **Maximale Knotenanzahl**: 3
-        - **Metric score threshold** (Metrischer Bewertungsschwellenwert): 0,085 (*sodass der Auftrag beendet wird, wenn ein Modell eine normalisierte mittlere quadratische Gesamtabweichung vom Metrikwert von 0,085 oder weniger erreicht*.)
-        - **Timeout**: 15
-        - **Iterationstimeout**: 15
+        - **Maximale Testversionen**: `3`
+        - **Maximale gleichzeitige Testversionen**: `3`
+        - **Maximale Knoten**: `3`
+        - **Metrischer Bewertungsschwellenwert**: `0.085` (*sodass wenn ein Modell eine normalisierte Wurzel der mittleren Fehlerquadratsumme von 0,085 oder weniger erreicht, der Auftrag beendet wird.*)
+        - **eXPERIMENT Timeout**: `15`
+        - **Iterationstimeout**: `15`
         - **Vorzeitige Beendigung aktivieren**: *Ausgewählt*
     - **Validierung und Test**:
         - **Validierungstyp**: Aufteilung der Train-Validation
@@ -126,24 +117,25 @@ Wenn der Auftrag für automatisiertes maschinelles Lernen abgeschlossen ist, kö
   
 1. Wählen Sie den Text unter **Algorithmusname**, um das beste Modell und seine Details anzuzeigen.
 
-1. Klicken Sie auf die Registerkarte **Metriken**, und wählen Sie die Diagramme **residuals** und **predicted_true** aus, wenn diese nicht bereits ausgewählt sind. 
+1. Klicken Sie auf die Registerkarte **Metriken**, und wählen Sie die Diagramme **residuals** und **predicted_true** aus, wenn diese nicht bereits ausgewählt sind.
 
-    Überprüfen Sie die Diagramme, die die Leistung des Modells anzeigen. Das **Residualwertediagramm** zeigt die *Residualwerte* (die Unterschiede zwischen vorhergesagten und tatsächlichen Werten) als Histogramm an. Das Diagramm **predicted_true** vergleicht die vorhergesagten Werte mit den tatsächlichen Werten. 
+    Überprüfen Sie die Diagramme, die die Leistung des Modells anzeigen. Das **Residualwertediagramm** zeigt die *Residualwerte* (die Unterschiede zwischen vorhergesagten und tatsächlichen Werten) als Histogramm an. Das Diagramm **predicted_true** vergleicht die vorhergesagten Werte mit den tatsächlichen Werten.
 
 ## Bereitstellen und Testen des Modells
 
-1. Wählen Sie auf der Registerkarte **Modell** für das beste Modell, das von Ihrem Auftrag für automatisiertes maschinelles Lernen trainiert wurde, die Option **Bereitstellen** aus und verwenden Sie die Option **Webdienst**, um das Modell mit den folgenden Einstellungen bereitzustellen:
-    - **Name:** predict-rentals
-    - **Beschreibung:** Vorhersage Fahrradvermietung
-    - **Computetyp:** Azure Container Instances
-    - **Authentifizierung aktivieren**: *ausgewählt*
+1. Wählen Sie auf der Registerkarte **Modell** für das beste Modell, das von Ihrem Auftrag für automatisiertes maschinelles Lernen trainiert wurde, die Option **Bereitstellen** aus und verwenden Sie die Option **Echtzeitendpunkt**, um das Modell mit den folgenden Einstellungen bereitzustellen:
+    - **VM**: Standard_DS3_v2
+    - **Instanzenanzahl:** 3
+    - **Endpunkt**: Neu
+    - **Endpunktname**: *Behalten Sie die Standardeinstellung bei, oder stellen Sie sicher, dass sie global eindeutig ist*
+    - **Bereitstellungsname**: *Standardeinstellung beibehalten*
+    - **Rückschließen der Datensammlung**: *Disabled* (Deaktiviert)
+    - **Paketmodell**: *Disabled* (Deaktiviert)
 
 1. Warten Sie, bis die Bereitstellung gestartet wurde. Dieser Vorgang kann einige Sekunden in Anspruch nehmen. Der **Bereitstellungsstatus** für den Endpunkt **predict-rentals** wird im Hauptteil der Seite als *Wird ausgeführt* angegeben.
 1. Warten Sie, bis der **Bereitstellungsstatus** in *Erfolgreich* geändert wird. Dies kann 5-10 Minuten dauern.
 
 ## Testen des bereitgestellten Diensts
-
->**Wichtig** Das Azure Machine Learning Studio unterstützt derzeit nicht den Typ der Dataseterstellung, die für die Verwendung der Bereitstellungstests erforderlich ist. Wir werden Sie informieren, wenn eine Lösung vorhanden ist. 
 
 Jetzt können Sie den bereitgestellten Dienst testen.
 
