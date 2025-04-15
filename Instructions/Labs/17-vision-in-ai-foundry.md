@@ -79,13 +79,15 @@ Das nächste Feature, das Sie ausprobieren werden, ist die Funktion *Extract Tag
 
 1. Kehren Sie zur Seite *Vision + Dokument* von Azure KI Foundry zurück, wählen Sie dann die Registerkarte **Bild** und wählen Sie die Kachel **Gemeinsame Tag-Extraktion**.
 
-1. Öffnen Sie den Ordner, der die Bilder enthält, die Sie heruntergeladen haben, und suchen Sie die Datei **store-image-2.jpg**, die wie folgt aussieht:
+2. Lassen Sie unter **Choose the model you want to try out** die Option **Prebuilt product vs. gap model** ausgewählt. Wählen Sie unter **Choose your language** die Sprache **Englisch** oder eine Sprache Ihrer Wahl aus.
+
+3. Öffnen Sie den Ordner, der die Bilder enthält, die Sie heruntergeladen haben, und suchen Sie die Datei **store-image-2.jpg**, die wie folgt aussieht:
 
     ![Abbildung einer Person mit Einkaufswagen in einem Supermarkt](./media/analyze-images-vision/store-camera-2.jpg)
 
-1. Laden Sie die Datei **store-camera-2.jpg** hoch.
+4. Laden Sie die Datei **store-camera-2.jpg** hoch.
 
-1. Überprüfen Sie die Liste der aus dem Bild extrahierten Tags und die Konfidenzwerte für die einzelnen Tags im Bereich der erkannten Attribute. Hier steht der Konfidenzwert für die Wahrscheinlichkeit, dass der Text für das erkannte Attribut das beschreibt, was tatsächlich auf dem Bild zu sehen ist. Beachten Sie in der Liste der Tags, dass sie nicht nur Objekte, sondern Aktionen wie *shopping*, *selling* und *standing* enthält.
+5. Überprüfen Sie die Liste der aus dem Bild extrahierten Tags und die Konfidenzwerte für die einzelnen Tags im Bereich der erkannten Attribute. Hier steht der Konfidenzwert für die Wahrscheinlichkeit, dass der Text für das erkannte Attribut das beschreibt, was tatsächlich auf dem Bild zu sehen ist. Beachten Sie in der Liste der Tags, dass sie nicht nur Objekte, sondern Aktionen wie *shopping*, *selling* und *standing* enthält.
 
     ![Screenshot des Bereichs „Detect attributes“ in Vision Studio mit Text und Konfidenzwerten neben dem Originalbild.](./media/analyze-images-vision/detect-attributes.png)
 
@@ -94,6 +96,8 @@ Das nächste Feature, das Sie ausprobieren werden, ist die Funktion *Extract Tag
 In dieser Aufgabe verwenden Sie die Funktion **Object detection** der Bildanalyse. Die Objekterkennung erkennt und extrahiert Begrenzungsrahmen basierend auf Tausenden von erkennbaren Objekten und Lebewesen.
 
 1. Kehren Sie zur Seite *Vision + Dokument* von Azure AI Foundry zurück. Wählen Sie dann die Registerkarte **Bild** und wählen Sie die Kachel **Gemeinsame Objekterkennung**.
+
+1. Lassen Sie unter **Choose the model you want to try out** die Option **Prebuilt product vs. gap model** ausgewählt.
 
 1. Öffnen Sie den Ordner, der die heruntergeladenen Bilder enthält, und suchen Sie die Datei **store-camera-3.jpg**, die wie folgt aussieht:
 
