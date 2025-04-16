@@ -45,9 +45,9 @@ In dieser Übung verwenden Sie Azure KI Speech im Azure AI Foundry-Portal, der P
 
 ## Erkunden von Spracherkennung im Speech-Playground von Azure AI Foundry
 
-Probieren wir die *Spracherkennung* im Speech-Playground von Azure AI Foundry aus. 
+Probieren wir die *Echtzeit-Spracherkennung* im Speech-Playground von Azure AI Foundry aus. 
 
-1. Scrollen Sie auf der Seite *Speech* nach unten und wählen Sie **Echtzeit-Transkription** unter *Sprachfunktionen ausprobieren*. Sie werden zum *Speech-Playground* weitergeleitet. 
+1. Scrollen Sie auf der Seite *Speech* nach unten und wählen Sie **Echtzeit-Spracherkennung** unter *Sprachfunktionen ausprobieren*. Sie werden zum *Speech-Playground* weitergeleitet. 
 
 1. Wählen Sie [**https://aka.ms/mslearn-speech-files**](https://aka.ms/mslearn-speech-files) aus, um **speech.zip** herunterzuladen. Öffnen Sie den Ordner . 
 
@@ -59,9 +59,9 @@ Probieren wir die *Spracherkennung* im Speech-Playground von Azure AI Foundry au
 
 1. Überprüfen Sie die Ausgabe. Der Text sollte erfolgreich erkannt und transkribiert worden sein.
 
-In dieser Übung haben Sie Azure KI Speech-Dienste im Speech-Playground von Azure AI Foundry ausprobiert. Anschließend haben Sie die Echtzeittranskription verwendet, um eine Audioaufzeichnung zu transkribieren. Sie konnten sehen, wie die Texttranskription generiert wurde, während die Audiodatei wiedergegeben wurde.
+In dieser Übung haben Sie Azure KI Speech-Dienste im Speech-Playground von Azure AI Foundry ausprobiert. Anschließend haben Sie die Echtzeit-Spracherkennung verwendet, um eine Audioaufzeichnung zu transkribieren. Sie konnten sehen, wie die Texttranskription generiert wurde, während die Audiodatei wiedergegeben wurde.
 
-## Bereinigen
+## Bereinigung
 
 Wenn Sie nicht vorhaben, weitere Übungen zu machen, löschen Sie alle Ressourcen, die Sie nicht mehr benötigen. Dadurch werden unnötige Kosten vermieden.
 
@@ -70,4 +70,4 @@ Wenn Sie nicht vorhaben, weitere Übungen zu machen, löschen Sie alle Ressource
 
 ## Weitere Informationen
 
-In dieser Übung wurden nur einige von vielen Funktionen des Sprachdienstes veranschaulicht. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der Seite [Sprachdienste](https://azure.microsoft.com/services/cognitive-services/speech-services).
+In dieser Übung wurden nur einige der Funktionen von Azure KI Speech Service veranschaulicht. Weitere Informationen über die Möglichkeiten dieses Diensts finden Sie auf der Seite [Sprachdienste](https://azure.microsoft.com/services/cognitive-services/speech-services).

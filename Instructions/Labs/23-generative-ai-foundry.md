@@ -3,7 +3,7 @@ lab:
   title: Erkunden von generativer KI im Azure AI Foundry-Portal
 ---
 
-# Erkunden generativer KI im Azure AI Foundry-Portal
+# Erkunden von generativer KI im Azure AI Foundry-Portal
 
 Generative KI beschreibt eine Kategorie von Fähigkeiten innerhalb der KI, die Inhalte erstellen. Personen interagieren in der Regel mit generativer KI, die mit Chatanwendungen integriert wurde. In dieser Übung testen Sie generative KI im Azure AI Foundry-Portal, die Plattform von Microsoft zum Erstellen intelligenter Anwendungen. 
 
@@ -21,7 +21,7 @@ Generative KI beschreibt eine Kategorie von Fähigkeiten innerhalb der KI, die I
  
     ![Screenshot des Erstellens eines Projektbereichs mit automatisch generierten Namen für Hub und Projekt.](./media/azure-ai-foundry-create-project.png)
 
-    > **Wichtig**: Sie benötigen eine Azure KI Services-Ressource, die an einem bestimmten Ort bereitgestellt wird, um den Rest des Labs durchzuführen.
+> **Wichtig**: Sie benötigen eine Azure KI Services-Ressource, die an einem bestimmten Ort bereitgestellt wird, um den Rest des Labs durchzuführen.
 
 1. Wählen Sie im gleichen Fenster *Projekt erstellen* die Option **Anpassen** und wählen Sie einen der folgenden **Standorte**: USA, Osten, Frankreich, Mitte, Südkorea, Mitte, Europa, Westen oder USA, Westen, um den Rest des Labs zu vervollständigen. Wählen Sie dann **Erstellen** aus. 
 
@@ -39,7 +39,7 @@ Generative KI beschreibt eine Kategorie von Fähigkeiten innerhalb der KI, die I
 
 ## Erkunden von generativer KI im Chat-Playground von Azure AI Foundry
 
-1. Wählen Sie auf der Seite „Playgrounds“ von Azure AI Foundry die Option **Chat-Playground ausprobieren**. Der Chat-Playground ist eine Benutzeroberfläche, über die Sie versuchen können, eine Chatanwendung mit verschiedenen generativen KI-Modellen zu erstellen.  
+1. Wählen Sie auf der Seite „Playgrounds“ von Azure AI Foundry die Option **Chat-Playground ausprobieren**. Der Chat-Playground ist eine Benutzeroberfläche, über die Sie versuchen können, eine Chatanwendung mit unterschiedlichen generativen KI-Modellen zu erstellen.  
 
 1. Um den Chat-Playground zu verwenden, müssen Sie ihn einem bereitgestellten Modell zuordnen. Im Chat-Playground wählen Sie **Bereitstellung erstellen**. Suchen Sie nach **GPT-4** und wählen Sie es aus. 
 
