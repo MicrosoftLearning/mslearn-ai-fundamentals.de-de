@@ -7,7 +7,7 @@ lab:
 
 In dieser Übung verwenden Sie das Feature für automatisiertes maschinelles Lernen in Azure Machine Learning, um ein Machine Learning-Modell zu trainieren und auszuwerten. Anschließend stellen Sie das trainierte Modell bereit und testen es.
 
-Diese Übung dauert ca. **30** Minuten.
+Diese Übung dauert ca. **35** Minuten.
 
 ## Erstellen eines Azure Machine Learning-Arbeitsbereichs
 
@@ -21,7 +21,7 @@ Um Azure Machine Learning verwenden zu können, müssen Sie einen Azure Machine 
     - **Abonnement**: *Ihr Azure-Abonnement*.
     - **Ressourcengruppe**: *Erstellen Sie eine Ressourcengruppe, oder wählen Sie eine Ressourcengruppe aus*.
     - **Name**: *Geben Sie einen eindeutigen Namen für den Arbeitsbereich ein.*
-    - **Region**: *Wählen Sie die geografisch nächstgelegene Region aus.*
+    - **Region:** USA, Osten.
     - **Speicherkonto**: *Für Ihren Arbeitsbereich wird standardmäßig ein neues Speicherkonto erstellt*.
     - **Schlüsseltresor**: *Für Ihren Arbeitsbereich wird standardmäßig ein neuer Schlüsseltresor erstellt*.
     - **Application Insights**: *Für Ihren Arbeitsbereich wird standardmäßig eine neue Application Insights-Ressource erstellt*.
@@ -29,7 +29,9 @@ Um Azure Machine Learning verwenden zu können, müssen Sie einen Azure Machine 
 
 1. Klicken Sie auf**Überprüfen + erstellen** und dann auf **Erstellen**. Warten Sie, bis Ihr Arbeitsbereich erstellt wurde (dies kann einige Minuten dauern), und wechseln Sie dann zur bereitgestellten Ressource.
 
-1. Wählen Sie **Studio starten** aus (oder öffnen Sie eine neue Browserregisterkarte. Navigieren Sie dann zu [https://ml.azure.com](https://ml.azure.com?azure-portal=true), und melden Sie sich mit Ihrem Microsoft-Konto bei Azure Machine Learning Studio an). Schließen Sie alle angezeigten Nachrichten.
+#### Studio starten 
+
+1. Wählen Sie in Ihrer Azure Machine Learning-Arbeitsbereichsressource **Studio starten** (oder öffnen Sie einen neuen Browser-Tab und navigieren Sie zu [https://ml.azure.com](https://ml.azure.com?azure-portal=true) und melden Sie sich mit Ihrem Microsoft-Konto bei Azure Machine Learning Studio an). Schließen Sie alle angezeigten Nachrichten.
 
 1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Andernfalls wählen Sie im linken Menü **Alle Arbeitsbereiche** aus, und wählen Sie dann den soeben erstellten Arbeitsbereich aus.
 
@@ -45,7 +47,7 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
 
     **Grundeinstellungen**:
 
-    - **Auftragsname**: `mslearn-bike-automl`
+    - **Jobname**: Das Feld Jobname sollte bereits mit einem eindeutigen Namen vorausgefüllt sein. Nehmen Sie keine Änderungen vor.
     - **Name des neuen Experiments**: `mslearn-bike-rental`
     - **Beschreibung**: Automatisiertes maschinelles Lernen für die Vorhersage des Fahrradverleihs
     - **Tags**: *keine*
@@ -84,7 +86,7 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
         - **Maximale gleichzeitige Testversionen**: `3`
         - **Maximale Knoten**: `3`
         - **Metrischer Bewertungsschwellenwert**: `0.085` (*sodass wenn ein Modell eine normalisierte Wurzel der mittleren Fehlerquadratsumme von 0,085 oder weniger erreicht, der Auftrag beendet wird.*)
-        - **eXPERIMENT Timeout**: `15`
+        - **Experiment Timeout**: `15`
         - **Iterationstimeout**: `15`
         - **Vorzeitige Beendigung aktivieren**: *Ausgewählt*
     - **Validierung und Test**:
@@ -112,8 +114,6 @@ Wenn der Auftrag für automatisiertes maschinelles Lernen abgeschlossen ist, kö
 
 1. Beachten Sie auf der Registerkarte **Übersicht** des automatisierten ML-Auftrags die Zusammenfassung des besten Modells.
     ![Screenshot: Zusammenfassung des besten Modells des automatisierten Machine Learning-Auftrags mit einem Rahmen um den Algorithmusnamen.](./media/use-automated-machine-learning/complete-run.png)
-
-    > **Hinweis** Möglicherweise wird eine Meldung „Warnung: Vom Benutzer angegebene Exitbewertung wurde erreicht...“ unter dem Status angezeigt. Dies ist eine erwartete Meldung. Fahren Sie mit dem nächsten Schritt fort.
   
 1. Wählen Sie den Text unter **Algorithmusname**, um das beste Modell und seine Details anzuzeigen.
 
@@ -132,6 +132,8 @@ Wenn der Auftrag für automatisiertes maschinelles Lernen abgeschlossen ist, kö
     - **Rückschließen der Datensammlung**: *Disabled* (Deaktiviert)
     - **Paketmodell**: *Disabled* (Deaktiviert)
 
+    > **Hinweis** Wenn Sie eine Meldung erhalten, dass nicht genügend Kontingent für die Auswahl der virtuellen Maschine *Standard_DS3_v2* vorhanden ist, wählen Sie bitte eine andere aus.
+
 1. Warten Sie, bis die Bereitstellung gestartet wurde. Dieser Vorgang kann einige Sekunden in Anspruch nehmen. Der **Bereitstellungsstatus** für den Endpunkt **predict-rentals** wird im Hauptteil der Seite als *Wird ausgeführt* angegeben.
 1. Warten Sie, bis der **Bereitstellungsstatus** in *Erfolgreich* geändert wird. Dies kann 5-10 Minuten dauern.
 
@@ -146,41 +148,37 @@ Jetzt können Sie den bereitgestellten Dienst testen.
 1. Ersetzen Sie im Bereich **Input data to test endpoint** (Eingabedaten zum Testen des Endpunkts) den JSON-Code der Vorlage durch die folgenden Eingabedaten:
 
     ```json
-    {
-      "input_data": {
-        "columns": [
-            {
-                "day": 1,
-                "mnth": 1,   
-                "year": 2022,
-                "season": 2,
-                "holiday": 0,
-                "weekday": 1,
-                "workingday": 1,
-                "weathersit": 2, 
-                "temp": 0.3, 
-                "atemp": 0.3,
-                "hum": 0.3,
-                "windspeed": 0.3 
-            }
-        ],
-        "index": [],
-        "data": []
-      }
+      {
+     "input_data": {
+       "columns": [
+         "day",
+         "mnth",
+         "year",
+         "season",
+         "holiday",
+         "weekday",
+         "workingday",
+         "weathersit",
+         "temp",
+         "atemp",
+         "hum",
+         "windspeed"
+       ],
+       "index": [0],
+       "data": [[1,1,2022,2,0,1,1,2,0.3,0.3,0.3,0.3]]
+     }
     }
-    ```
 
+    ```
 
 1. Klicken Sie auf die Schaltfläche **Testen**.
 
 1. Überprüfen Sie die Testergebnisse, die eine vorhergesagte Anzahl von Vermietungen basierend auf den Eingabefeatures enthalten, ähnlich wie hier:
 
     ```JSON
-    {
-      "Results": [
-        444.27799000000000
-      ]
-    }
+    [
+      352.3564674945718
+    ]
     ```
 
     Im Testbereich wurden die Eingabedaten erfasst und das von Ihnen trainierte Modell verwendet, um die vorhergesagte Anzahl von Vermietungen zurückzugeben.

@@ -1,11 +1,3 @@
-#README
-
-We've turned off the ability to report issues directly on this repo and do not monitor PRs.
-
-Provide feedback here: https://aka.ms/provide-feedback
-
-Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
-
 # Übungen zu den Azure KI-Grundlagen
 
 Dieses Repository enthält Anleitungen und Ressourcen für praktische Übungen in den offiziellen Microsoft-Kursunterlagen zur Unterstützung von [Microsoft Certified: Azure AI Fundamentals](https://learn.microsoft.com/credentials/certifications/azure-ai-fundamentals/)-Zertifizierung. Die Übungen sind so konzipiert, dass sie die zugehörigen Schulungsmodule auf [Microsoft Learn](https://learn.microsoft.com/training) ergänzen, und eine <u>Teilmenge</u> dieser Übungen umfasst die praktischen Labs im offiziellen angeleiteten Kurs [AI-900: Microsoft Azure AI Fundamentals](https://learn.microsoft.com/en-us/training/courses/ai-900t00).

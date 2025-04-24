@@ -3,11 +3,9 @@ lab:
   title: Verwenden von Fragen und Antworten mit Language Studio
 ---
 
-# Verwenden des „Fragen und Antworten“-Modells mit Language Studio
+# Verwenden Sie die Fragen und Antworten mit Language Studio
 
-In dieser Übung werden Sie Language Studio verwenden, um eine Wissensdatenbank mit Fragen und Antworten zu erstellen und zu trainieren, die von einem Kundendienst-Bot verwendet werden soll. Der Inhalt für die Wissensdatenbank wird von einer bestehenden FAQ-Seite der Website von Margie’s Travel, einem fiktiven Reisebüro, stammen. Anschließend verwenden Sie Language Studio, um zu sehen, wie es funktioniert, wenn Kund*innen den Kundendienst-Bot verwenden.
-
-Bei der Implementierung eines Bots besteht der erste Schritt darin, eine Wissensdatenbank mit Frage- und Antwortpaaren zu erstellen. Diese wird zusammen mit eingebauten Features zur Verarbeitung natürlicher Sprache verwendet, damit der Bot Fragen interpretieren und die für die Benutzer*innen am besten geeignete Antwort finden kann.
+In dieser Übung werden Sie Language Studio verwenden, um eine Wissensdatenbank mit Fragen und Antworten zu erstellen und zu trainieren. Der Inhalt für die Wissensdatenbank wird von einer bestehenden FAQ-Seite der Website von Margie’s Travel, einem fiktiven Reisebüro, stammen. Anschließend verwenden Sie Language Studio, um zu sehen, wie es funktioniert, wenn Kund*innen den Kundendienst-Bot verwenden.
 
 Azure KI Language umfasst das Feature *Fragen und Antworten*, das Sie zur Erstellung einer Wissensdatenbank verwenden werden. Wissensdatenbanken können entweder durch die manuelle Eingabe von Frage- und Antwortpaaren oder aus einem vorhandenen Dokument oder einer Webseite erstellt werden. Margie’s Travel möchte das vorhandene FAQ-Dokument verwenden.
 
@@ -104,54 +102,14 @@ Da Sie nun über eine Wissensdatenbank verfügen, können Sie diese testen.
 1. Probieren Sie eine andere Frage aus, z. B. `How can I cancel a reservation?`
 1. Wenn Sie mit dem Testen der Wissensdatenbank fertig sind, wählen Sie **Testen**, um den Testbereich zu schließen.
 
-## Erstellen eines Bots für die Wissensdatenbank
+## Bereitstellen des Projekts
 
-Die Wissensdatenbank bietet einen Back-End-Dienst, den Clientanwendungen nutzen können, um Fragen über eine Art von Benutzeroberfläche zu beantworten. Bei diesen Clientanwendungen handelt es sich in der Regel um Bots. Um die Wissensdatenbank für einen Bot zur Verfügung zu stellen, müssen Sie sie als Dienst veröffentlichen, auf den über HTTP zugegriffen werden kann. Mit dem Azure Bot Service können Sie dann einen Bot erstellen und hosten, der die Wissensdatenbank nutzt, um Benutzerfragen zu beantworten.
+Sie können die Wissensdatenbank als Clientanwendung bereitstellen, um Fragen zu beantworten.
 
 1. Wählen Sie im linken Bereich **Wissensdatenbank bereitstellen** aus.
 1. Wählen Sie oben auf der Seite **Bereitstellen** aus. In einem Dialogfeld wird gefragt, ob Sie das Projekt bereitstellen möchten. Klicken Sie auf **Bereitstellen**.
 
  ![Stellen Sie die Wissensdatenbank bereit.](media/create-a-bot/deploy-knowledge-base.png)
-
-1. Nachdem der Dienst bereitgestellt wurde, wählen Sie **Einen Bot erstellen** aus. Dadurch wird das Azure-Portal auf einer neuen Browserregisterkarte geöffnet, sodass Sie einen Web-App-Bot in Ihrem Azure-Abonnement erstellen können.
-1. Erstellen Sie im Azure-Portal einen **Web-App-Bot**. (Möglicherweise wird eine Warnmeldung angezeigt, um zu überprüfen, ob die Quelle der Vorlage vertrauenswürdig ist. Sie müssen keine Maßnahmen für diese Nachricht ergreifen.) Fahren Sie fort, indem Sie die folgenden Einstellungen aktualisieren:
-
-    - **Projektdetails**
-        - **Abonnement:** *Geben Sie Ihr Azure-Abonnement an.*
-        - **Ressourcengruppe**: *Dies ist die Ressourcengruppe, die Ihre Sprachressource enthält.*
-    - **Instanzendetails**
-        - **Ressourcengruppenstandort:** *Der gleiche Standort wie für Ihren Sprachdienst*
-    - **Azure Bot**
-        - **Bot-Handle:** *Ein eindeutiger Name für Ihren Bot* (*vorab aufgefüllt*)
-    - **Tarif auswählen**
-        - **Tarif:** Free (F0) (Möglicherweise müssen Sie *Plan ändern* auswählen)
-    - **Microsoft-App-ID**
-        - **Erstellungstyp**: *Wählen Sie **Neue benutzerseitig zugewiesene verwaltete Identität erstellen***. 
-
-5. Wählen Sie **Weiter** aus, um die Einstellungen weiter zu aktualisieren. 
-    - **App Service**
-        - **App-Name**: *Genau wie bei **Bot-Handle**, wobei **.azurewebsites.net** automatisch angefügt wird*.
-        - **SDK-Sprache**: *Wählen Sie entweder C# oder Node.js aus*.
-    - **App Service-Plan**
-        - **Erstellungstyp**: *Wählen Sie **Erstellen eines neuen App Service-Plans***.
-    - **App-Einstellungen**
-        - **Sprachressourcenschlüssel**: *Sie müssen Ihren Sprachressourcenschlüssel kopieren und hier einfügen*:
-            - Navigieren Sie in einem anderen Browsertab zum Azure-Portal unter [https://portal.azure.com](https://portal.azure.com?azure-portal=true).
-            - Gehen Sie zu Ihrer Sprachdienstressource.
-            - Kopieren Sie auf der Seite **Schlüssel und Endpunkt** einen der Schlüssel.
-            - Fügen Sie ihn hier ein.
-        - **Projektname der Sprache:** MargiesTravel
-        - **Hostname des Sprachdienstendpunkts:** *Vorab aufgefüllt mit Ihrem Sprachdienstendpunkt*
-    - **Sprachdienstdetails**
-        - **Abonnement-ID:** *Vorab aufgefüllt mit Ihrer Abonnement-ID*
-        - **Ressourcengruppenname:** *Vorab aufgefüllt mit dem Namen Ihrer Ressourcengruppe*
-        - **Kontoname:** *Vorab aufgefüllt mit Ihrem Kontonamen*
-
-1. Klicken Sie auf **Erstellen**. Warten Sie dann, bis Ihr Bot erstellt wurde (das Benachrichtigungssymbol oben rechts in Form einer Glocke wird animiert, während Sie warten). Wählen Sie anschließend in der Benachrichtigung über den Abschluss der Bereitstellung **Zu Ressource wechseln** aus (oder wählen Sie alternativ auf der Startseite **Ressourcengruppen** aus, öffnen Sie die Ressourcengruppe, in der Sie den Bot erstellt haben, und wählen Sie die **Azure-Bot**-Ressource aus).
-1. Suchen Sie im linken Bereich Ihres Bots nach den **Einstellungen**, wählen Sie **In Webchat testen** aus, und warten Sie, bis der Bot die Nachricht **Hallo and willkommen** anzeigt (die Initialisierung kann einige Sekunden dauern).
-1. Verwenden Sie die Testchatschnittstelle, um sicherzustellen, dass Ihr Bot Fragen aus Ihrer Wissensdatenbank wie erwartet beantwortet. Versuchen Sie beispielsweise, `I need to cancel my hotel` zu übermitteln.
-
-Experimentieren Sie mit dem Bot. Wahrscheinlich werden Sie feststellen, dass er Fragen aus den häufig gestellten Fragen recht genau beantworten kann, aber es wird nur begrenzt in der Lage sein, Fragen zu interpretieren, für die er nicht trainiert wurde. Sie können Language Studio jederzeit zur Bearbeitung der Wissensdatenbank verwenden, um sie zu verbessern und dann erneut zu veröffentlichen.
 
 ## Bereinigung
 
@@ -163,4 +121,3 @@ Wenn Sie nicht vorhaben, weitere Übungen zu machen, löschen Sie alle Ressource
 ## Weitere Informationen
 
 - Weitere Informationen zum „Fragen und Antworten“-Dienst finden Sie in [der Dokumentation.](https://docs.microsoft.com/azure/cognitive-services/language-service/question-answering/overview)
-- Weitere Informationen zum Microsoft Bot Service finden Sie auf der [Azure Bot Service-Seite](https://azure.microsoft.com/services/bot-service/).
