@@ -1,8 +1,3 @@
----
-lab:
-  title: "Erkunden von Inhaltssicherheit in Azure\_AI Foundry"
----
-
 # Erkunden von Inhaltssicherheit in Azure AI Foundry
 
 Mit Azure KI Services können Benutzer*innen KI-Anwendungen mit sofort einsatzbereiten, vorgefertigten und anpassbaren APIs und Modellen erstellen. In dieser Übung werfen Sie einen Blick auf einen der Dienste, Azure KI Inhaltssicherheit, mit dem Sie Text- und Bildinhalte moderieren können. Im Azure AI Foundry-Portal, der Plattform von Microsoft zur Erstellung intelligenter Anwendungen, verwenden Sie Azure KI Inhaltssicherheit, um Text zu kategorisieren und ihm eine Schweregradbewertung zuzuweisen. 
