@@ -33,13 +33,13 @@ Um Azure KI Services in Anwendungen zu integrieren, benötigen Fachkräfte in de
 
 ## Azure KI Services in Aktion
 
-1. Navigieren Sie auf einer Browserregisterkarte zu [Azure AI Foundry](https://ai.azure.com?azure-portal=true).
+Beginnen wir mit dem Erstellen eines Azure AI Foundry-Projekts.
 
-1. Melden Sie sich mit Ihrem Konto an. 
+1. Öffnen Sie in einem Webbrowser unter `https://ai.azure.com` das [Azure KI Foundry-Portal](https://ai.azure.com) und melden Sie sich mit Ihren Azure-Anmeldeinformationen an. Schließen Sie alle Tipps oder Schnellstartfenster, die bei der ersten Anmeldung geöffnet werden, und verwenden Sie gegebenenfalls das Logo **Azure AI Foundry** oben links, um zur Startseite zu navigieren, die ähnlich wie die folgende Abbildung aussieht (schließen Sie das **Hilfe**-Fenster, falls es geöffnet ist):
 
-1. Wählen Sie unter *Außerhalb eines Projekts arbeiten* die Kachel **KI-Dienste anzeigen** aus.
+    ![Screenshot der Azure AI Foundry-Startseite mit ausgewählter Option „Agent erstellen“.](./media/azure-ai-foundry-home-page.png)
  
-    ![Screenshot des linken Menüs auf dem Projektbildschirm, auf dem „KI Services“ ausgewählt ist.](./media/view-ai-foundry-outside-project.png)  
+1. Öffnen Sie in einem neuen Browserfenster die Seite [Azure KI Services erkunden](https://ai.azure.com/explore/aiservices).
 
 1. Wählen Sie auf der Seite *KI Services* die Kachel *Vision + Dokument*, um die Azure KI Vision- und Dokument-Funktionen zu testen.
 
@@ -64,12 +64,4 @@ Um Azure KI Services in Anwendungen zu integrieren, benötigen Fachkräfte in de
 ## Bereinigen 
 
 Wenn Sie fertig sind, können Sie die Azure KI Services-Ressource aus dem Azure-Portal löschen. Das Löschen der Ressource ist eine Möglichkeit, die Kosten zu senken, die anfallen, wenn die Ressource im Abonnement vorhanden ist. Navigieren Sie dazu zur Seite **Übersicht** Ihrer Azure KI Services-Ressource. Wählen Sie oben auf dem Bildschirm **Löschen** aus.
-
-
-
-
-
-
-
-
 
