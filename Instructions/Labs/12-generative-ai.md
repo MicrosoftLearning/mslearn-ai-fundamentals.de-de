@@ -9,20 +9,15 @@ Generative KI beschreibt eine Kategorie von Fähigkeiten innerhalb der KI, die I
 
 ## Erstellen eines Projekts im Azure KI Foundry-Portal
 
-Beginnen wir mit dem Erstellen eines Azure AI Foundry-Projekts.
+1. Öffnen Sie in einem Webbrowser unter `https://ai.azure.com` das [Azure KI Foundry-Portal](https://ai.azure.com) und melden Sie sich mit Ihren Azure-Anmeldeinformationen an. Schließen Sie alle Tipps oder Schnellstartbereiche, die bei der ersten Anmeldung angezeigt werden. 
 
-1. Öffnen Sie in einem Webbrowser unter `https://ai.azure.com` das [Azure KI Foundry-Portal](https://ai.azure.com) und melden Sie sich mit Ihren Azure-Anmeldeinformationen an. Schließen Sie alle Tipps oder Schnellstartfenster, die bei der ersten Anmeldung geöffnet werden, und verwenden Sie gegebenenfalls das Logo **Azure AI Foundry** oben links, um zur Startseite zu navigieren, die ähnlich wie die folgende Abbildung aussieht (schließen Sie das **Hilfe**-Fenster, falls es geöffnet ist):
+1. Navigieren Sie im Browser zu `https://ai.azure.com/managementCenter/allResources`und wählen Sie **Erstellen** aus. Wählen Sie anschließend die Option zum Erstellen einer *neuen Azure AI Foundry-Ressource*.
 
-    ![Screenshot der Azure AI Foundry-Startseite mit ausgewählter Option „Agent erstellen“.](./media/azure-ai-foundry-home-page.png)
+1. Geben Sie im Assistenten *Projekt erstellen* einen gültigen Namen für Ihr Projekt ein.
 
-1. Wählen Sie auf der Startseite **+ Agent erstellen**.
-
-1. Geben Sie im Assistenten **Agent erstellen** einen gültigen Namen für Ihr Projekt ein. 
-
-1. Wählen Sie **Erweiterte Optionen** und nehmen Sie die folgenden Einstellungen vor:
-    - **Azure AI Foundry-Ressource**: *Behalten Sie den Standardnamen bei.*
-    - **Abonnement:** *Geben Sie Ihr Azure-Abonnement an.*
-    - **Ressourcengruppe**: *Erstellen Sie eine Ressourcengruppe, oder wählen Sie eine Ressourcengruppe aus*.
+1. Erweitern Sie *Erweiterte Optionen*, um folgende Einstellungen vorzunehmen:
+    - **Abonnement**: Ihr Azure-Abonnement
+    - **Ressourcengruppe**: Erstellen oder wählen Sie eine Ressourcengruppe aus.
     - **Region**: Wählen Sie einen der folgenden Standorte aus:
         * East US
         * Frankreich, Mitte
@@ -30,13 +25,9 @@ Beginnen wir mit dem Erstellen eines Azure AI Foundry-Projekts.
         * Europa, Westen
         * USA (Westen)
 
-1. Wählen Sie **Erstellen** und überprüfen Sie Ihre Konfiguration. Warten Sie, bis der Einrichtungsvorgang abgeschlossen ist.
+    Warten Sie, bis Ihr Projekt und Hub erstellt wurden.
 
-    >**Hinweis**: Wenn Sie eine Berechtigungsfehlermeldung erhalten, klicken Sie auf die Schaltfläche **Korrigieren**, um die erforderlichen Berechtigungen hinzuzufügen und fortzufahren.
-
-1. Nach der Erstellung Ihres Projekts werden Sie standardmäßig zum Agents-Playground im Azure AI Foundry-Portal weitergeleitet, der in etwa wie folgt aussieht:
-
-    ![Screenshot eines Azure KI-Projekts im Azure AI Foundry-Portal.](./media/ai-foundry-project-2.png)
+1. Wenn das Projekt erstellt wird, gelangen Sie zu einer *Übersichtsseite* der Projektdetails.
 
 1. Wählen Sie im Menü auf der linken Seite des Bildschirms **Playgrounds**.
 
@@ -44,10 +35,9 @@ Beginnen wir mit dem Erstellen eines Azure AI Foundry-Projekts.
 
 1. Wählen Sie auf der Seite „Playgrounds“ von Azure AI Foundry die Option **Chat-Playground ausprobieren**. Der Chat-Playground ist eine Benutzeroberfläche, über die Sie versuchen können, eine Chatanwendung mit verschiedenen generativen KI-Modellen zu erstellen.  
 
-1. Um den Chat-Playground zu verwenden, müssen Sie ihn einem bereitgestellten Modell zuordnen. Im Chat-Playground wählen Sie **Bereitstellung erstellen**. Suchen Sie nach **GPT-4** und wählen Sie es aus. 
+1. Um den Chat-Playground zu verwenden, müssen Sie ihn einem bereitgestellten Modell zuordnen. Im Chat-Playground müssen Sie **gpt-4o** ausgewählt haben. Wenn keine Bereitstellungen angezeigt werden, müssen Sie **+ Bereitstellung erstellen** auswählen, nach **gpt-4o** suchen und dann **Bestätigen** und schließlich **Bereitstellen** auswählen.
 
-1. Im Fenster *Modell bereitstellen* behalten Sie die Standardbenennung und -auswahl bei und wählen **Bereitstellen**. Es kann einen Moment dauern, bis das Modell bereitgestellt wird. Sie können den Status Ihrer Bereitstellung überprüfen, indem Sie *Modelle und Endpunkte* im linken Menü unter *Meine Ressourcen* auswählen.
-1. Im Chat-Playground können Sie Ihr eingesetztes Modell verwenden, wenn es im Auswahlmenü *Bereitstellung* erscheint. Stellen Sie sicher, dass das bereitgestellte Modell ausgewählt wurde. Wichtig ist, dass Sie **Änderungen übernehmen** wählen müssen, nachdem Sie Änderungen am *Setup* vorgenommen haben. 
+1. Im Chat-Playground können Sie Ihr eingesetztes Modell verwenden, wenn es im Auswahlmenü *Bereitstellung* erscheint. Wichtig ist, dass Sie **Änderungen übernehmen** wählen müssen, nachdem Sie Änderungen am *Setup* vorgenommen haben. 
 
 1. Berücksichtigen Sie die folgenden Möglichkeiten, wie Sie Antworten von einem generativen KI-Assistenten verbessern können:
     - Beginnen Sie mit einem konkreten Ziel für die Aufgabe, die der Assistent übernehmen soll
@@ -56,7 +46,7 @@ Beginnen wir mit dem Erstellen eines Azure AI Foundry-Projekts.
     - Fügen Sie Kontext hinzu, um die Eignung und Relevanz der Antwort zu maximieren.
     - Legen Sie klare Erwartungen an die Antwort fest.
 
-1. Versuchen wir einmal, eine Antwort mit einem Prompt mit einem bestimmten Ziel zu erstellen. Geben Sie in das Chat-Feld den folgenden Prompt ein:
+1. Versuchen wir, eine Antwort mithilfe eines Prompts mit einem spezifischen Ziel zu generieren. Geben Sie in das Chat-Feld den folgenden Prompt ein:
 
     ```prompt
     I'm planning a trip to Paris in September. Can you help me?
@@ -105,3 +95,11 @@ Beginnen wir mit dem Erstellen eines Azure AI Foundry-Projekts.
 1. Überprüfen Sie die Antwort, die eine nummerierte Liste von Sehenswürdigkeiten zur Verfügung stellen sollte, die in Paris zu sehen sind.
 
 1. Wenn Sie fertig sind, können Sie das Browserfenster schließen.
+
+## Bereinigung
+
+Wenn Sie nicht vorhaben, weitere Übungen zu machen, löschen Sie alle Ressourcen, die Sie nicht mehr benötigen. Dadurch werden unnötige Kosten vermieden.
+
+1. Öffnen Sie das **Azure-Portal** unter [https://portal.azure.com](https://portal.azure.com), und wählen Sie die Ressourcengruppe aus, die die von Ihnen erstellten Ressourcen enthält.
+
+1. Wählen Sie die Ressourcen, dann **Löschen** und anschließend **Ja** aus, um den Löschvorgang zu bestätigen. Die Ressourcen werden dann gelöscht.
