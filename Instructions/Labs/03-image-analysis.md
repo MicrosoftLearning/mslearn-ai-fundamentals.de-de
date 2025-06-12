@@ -11,20 +11,15 @@ Angenommen, das fiktive Einzelhandelsunternehmen *Northwind Traders* möchte ein
 
 ## Erstellen eines Projekts im Azure KI Foundry-Portal
 
-Beginnen wir mit dem Erstellen eines Azure AI Foundry-Projekts.
+1. Öffnen Sie in einem Webbrowser unter `https://ai.azure.com` das [Azure KI Foundry-Portal](https://ai.azure.com) und melden Sie sich mit Ihren Azure-Anmeldeinformationen an. Schließen Sie alle Tipps oder Schnellstartbereiche, die bei der ersten Anmeldung angezeigt werden. 
 
-1. Öffnen Sie in einem Webbrowser unter `https://ai.azure.com` das [Azure KI Foundry-Portal](https://ai.azure.com) und melden Sie sich mit Ihren Azure-Anmeldeinformationen an. Schließen Sie alle Tipps oder Schnellstartfenster, die bei der ersten Anmeldung geöffnet werden, und verwenden Sie gegebenenfalls das Logo **Azure AI Foundry** oben links, um zur Startseite zu navigieren, die ähnlich wie die folgende Abbildung aussieht (schließen Sie das **Hilfe**-Fenster, falls es geöffnet ist):
+1. Navigieren Sie im Browser zu `https://ai.azure.com/managementCenter/allResources`und wählen Sie **Erstellen** aus. Wählen Sie dann die Option zum Erstellen einer neuen *KI-Hubressource* aus.
 
-    ![Screenshot der Azure AI Foundry-Startseite mit ausgewählter Option „Agent erstellen“.](./media/azure-ai-foundry-home-page.png)
+1. Geben Sie im Assistenten *Projekt erstellen* einen gültigen Namen für Ihr Projekt ein. Wenn ein vorhandener Hub vorgeschlagen wird, wählen Sie die Option zum Erstellen eines *neuen* Hubs. 
 
-1. Wählen Sie auf der Startseite **+ Agent erstellen**.
-
-1. Geben Sie im Assistenten **Agent erstellen** einen gültigen Namen für Ihr Projekt ein. 
-
-1. Wählen Sie **Erweiterte Optionen** und nehmen Sie die folgenden Einstellungen vor:
-    - **Azure AI Foundry-Ressource**: *Behalten Sie den Standardnamen bei.*
-    - **Abonnement:** *Geben Sie Ihr Azure-Abonnement an.*
-    - **Ressourcengruppe**: *Erstellen Sie eine Ressourcengruppe, oder wählen Sie eine Ressourcengruppe aus*.
+1. Erweitern Sie *Erweiterte Optionen*, um folgende Einstellungen vorzunehmen:
+    - **Abonnement**: Ihr Azure-Abonnement
+    - **Ressourcengruppe**: Erstellen oder wählen Sie eine Ressourcengruppe aus.
     - **Region**: Wählen Sie einen der folgenden Standorte aus:
         * East US
         * Frankreich, Mitte
@@ -32,17 +27,13 @@ Beginnen wir mit dem Erstellen eines Azure AI Foundry-Projekts.
         * Europa, Westen
         * USA (Westen)
 
-1. Wählen Sie **Erstellen** und überprüfen Sie Ihre Konfiguration. Warten Sie, bis der Einrichtungsvorgang abgeschlossen ist.
+    Warten Sie, bis Ihr Projekt und Hub erstellt wurden.
 
-    >**Hinweis**: Wenn Sie eine Berechtigungsfehlermeldung erhalten, klicken Sie auf die Schaltfläche **Korrigieren**, um die erforderlichen Berechtigungen hinzuzufügen und fortzufahren.
-
-1. Nach der Erstellung Ihres Projekts werden Sie standardmäßig zum Agents-Playground im Azure AI Foundry-Portal weitergeleitet, der in etwa wie folgt aussieht:
-
-    ![Screenshot eines Azure KI-Projekts im Azure AI Foundry-Portal.](./media/ai-foundry-project-2.png)
- 
-1. Öffnen Sie in einem neuen Browserfenster die Seite [Azure KI Services erkunden](https://ai.azure.com/explore/aiservices).
+1. Wenn das Projekt erstellt wird, gelangen Sie zu einer *Übersichtsseite* der Projektdetails. Wählen Sie **KI-Dienste** im linken Menü aus (Möglicherweise müssen Sie das Menü erweitern, indem Sie auf das obere Symbol klicken, um den Inhalt zu lesen). 
 
 1. Wählen Sie auf der Seite *KI Services* die Kachel *Vision + Dokument*, um die Azure KI Vision- und Dokument-Funktionen zu testen.
+
+    ![Screenshot der Kachel „Vision + Dokument“ in Azure AI Foundry.](./media/vision-document-tile.png)
 
 ## Generieren von Beschriftungen für Bilder
 
@@ -51,6 +42,8 @@ Lassen Sie uns die Bildbeschriftungsfunktion von Azure KI Vision nutzen, um Bild
 1. Scrollen Sie auf der Seite *Vision + Dokument* nach unten und wählen Sie **Bild** unter *Alle anderen Vision-Funktionen anzeigen*. Wählen Sie dann die Kachel **Bildbeschriftung**.
 
     ![Screenshot der Bildbeschriftungs-Kachel im Bildbereich der Seite „Vision und Dokument“.](./media/vision-image-captioning-tile.png)
+
+1. Wählen Sie auf der Seite **Bildunterschriften hinzufügen** die von Ihnen erstellte Ressource *Azure KI Services* aus. 
 
 1. Auf der Seite **Bildunterschriften hinzufügen** überprüfen Sie die Ressource, mit der Sie verbunden sind und die unter der Unterüberschrift **Ausprobieren** aufgeführt ist. Sie sollten keine Änderungen vornehmen müssen. (*Hinweis*: Wenn Sie während der Ressourcenerstellung noch keinen gültigen Ressourcenspeicherort angepasst haben, werden Sie möglicherweise aufgefordert, eine neue Azure KI Services-Ressource zu erstellen, die sich in einer gültigen Region befindet. Sie müssen die neue Ressource erstellen, um mit dem Lab fortzufahren.)  
 
