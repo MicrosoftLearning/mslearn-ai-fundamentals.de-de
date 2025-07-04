@@ -177,8 +177,6 @@ Nachdem Sie die Dokumente im gespeichert haben, können Sie Azure KI-Suche verw
 
 1. Lassen Sie **Zeitplan** auf **Einmal** festgelegt.
 
-1. Erweitern Sie **Erweiterte Optionen**. Stellen Sie sicher, dass die Option **Base64-Codierungsschlüssel** ausgewählt ist, da Codierungsschlüssel den Index effizienter machen können.
-
 1. Wählen Sie **Senden** aus, um Datenquelle, Skillset, Index und Indexer zu erstellen. Der Indexer wird automatisch ausgeführt und führt die Indizierungspipeline aus. Dieser führt folgende Aufgaben aus:
     - Extrahiert die Felder und Inhalte von Dokumentmetadaten aus der Datenquelle.
     - Führt das Skillset für kognitive Skills aus, um weitere angereicherte Felder zu generieren.
