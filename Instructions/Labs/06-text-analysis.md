@@ -13,33 +13,27 @@ In dieser Übung verwenden Sie Azure AI Language im Azure AI Foundry-Portal, die
 
 ## Erstellen eines Projekts im Azure KI Foundry-Portal
 
-1. Navigieren Sie auf einer Browserregisterkarte zu [Azure AI Foundry](https://ai.azure.com?azure-portal=true).
+1. Öffnen Sie in einem Webbrowser unter `https://ai.azure.com` das [Azure KI Foundry-Portal](https://ai.azure.com) und melden Sie sich mit Ihren Azure-Anmeldeinformationen an. Schließen Sie alle Tipps oder Schnellstartbereiche, die bei der ersten Anmeldung angezeigt werden. 
 
-1. Melden Sie sich mit Ihrem Konto an. 
+1. Navigieren Sie im Browser zu `https://ai.azure.com/managementCenter/allResources`und wählen Sie **Erstellen** aus. Wählen Sie anschließend die Option zum Erstellen einer *neuen Azure AI Foundry-Ressource*.
 
-1. Wählen Sie auf der Startseite des Azure AI Foundry-Portals die Option **Projekt erstellen** aus. In Azure AI Foundry sind Projekte Container, die Ihnen beim Organisieren Ihrer Arbeit helfen.  
+1. Geben Sie im Assistenten *Projekt erstellen* einen gültigen Namen für Ihr Projekt ein.
 
-    ![Screenshot der Startseite von Azure AI Foundry mit ausgewähltem „Projekt erstellen“.](./media/azure-ai-foundry-home-page.png)
+1. Erweitern Sie *Erweiterte Optionen*, um folgende Einstellungen vorzunehmen:
+    - **Abonnement**: Ihr Azure-Abonnement
+    - **Ressourcengruppe**: Erstellen oder wählen Sie eine Ressourcengruppe aus.
+    - **Region**: Wählen Sie einen der folgenden Standorte aus:
+        * East US
+        * Frankreich, Mitte
+        * Korea, Mitte
+        * Europa, Westen
+        * USA (Westen)
 
-1. Im Bereich *Projekt erstellen* sehen Sie einen generierten Projektnamen, den Sie so beibehalten können. Je nachdem, ob Sie in der Vergangenheit einen Hub erstellt haben, wird entweder eine Liste der zu erstellenden *neuen* Azure-Ressourcen oder eine Dropdownliste vorhandener Hubs angezeigt. Wenn Sie die Dropdown-Liste der vorhandenen Hubs sehen, wählen Sie *Neuen Hub erstellen*, erstellen Sie einen eindeutigen Namen für Ihren Hub und wählen Sie *Weiter*.  
- 
-    ![Screenshot des Erstellens eines Projektbereichs mit automatisch generierten Namen für Hub und Projekt.](./media/azure-ai-foundry-create-project.png)
+    Warten Sie, bis Ihr Projekt und Hub erstellt wurden.
 
-> **Wichtig**: Sie benötigen eine Azure KI Services-Ressource, die an einem bestimmten Ort bereitgestellt wird, um den Rest des Labs durchzuführen.
+1. Wenn das Projekt erstellt wird, gelangen Sie zu einer *Übersichtsseite* der Projektdetails.
 
-1. Wählen Sie im gleichen Fenster *Projekt erstellen* die Option **Anpassen** und wählen Sie einen der folgenden **Standorte**: USA, Osten, Frankreich, Mitte, Südkorea, Mitte, Europa, Westen oder USA, Westen, um den Rest des Labs zu vervollständigen. Wählen Sie dann **Erstellen** aus. 
-
-1. Notieren Sie sich die erstellten Ressourcen: 
-- Azure KI Services
-- Azure KI-Hub
-- Azure KI-Projekt
-- Speicherkonto
-- Key vault
-- Ressourcengruppe  
- 
-1. Nachdem die Ressourcen erstellt wurden, gelangen Sie auf die Seite *Übersicht* Ihres Projekts. Wählen Sie im Menü auf der linken Seite des Bildschirms **Playgrounds**.
- 
-    ![Screenshot des linken Menüs auf dem Projektbildschirm mit ausgewähltem Playground.](./media/azure-ai-foundry-playgrounds.png)  
+1. Wählen Sie im Menü auf der linken Seite des Bildschirms **Playgrounds**.
 
 1. Wählen Sie auf der Seite *Playgrounds* die Kachel **Speech-Playground**, um einige Azure KI Language-Funktionen auszuprobieren.
 
