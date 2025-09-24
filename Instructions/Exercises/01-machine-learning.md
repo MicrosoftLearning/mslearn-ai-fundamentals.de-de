@@ -31,7 +31,7 @@ Um Azure Machine Learning verwenden zu können, müssen Sie einen Azure Machine 
 
 #### Studio starten 
 
-1. Wählen Sie in Ihrer Azure Machine Learning-Arbeitsbereichsressource **Studio starten** (oder öffnen Sie einen neuen Browser-Tab und navigieren Sie zu [https://ml.azure.com](https://ml.azure.com?azure-portal=true) und melden Sie sich mit Ihrem Microsoft-Konto bei Azure Machine Learning Studio an). Schließen Sie alle angezeigten Nachrichten.
+1. Wählen Sie in Ihrer Azure Machine Learning-Arbeitsbereichsressource **Studio starten** (oder öffnen Sie einen neuen Browser-Tab und navigieren Sie zu [https://ml.azure.com](https://ml.azure.com) und melden Sie sich mit Ihrem Microsoft-Konto bei Azure Machine Learning Studio an). Schließen Sie alle angezeigten Nachrichten.
 
 1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Andernfalls wählen Sie im linken Menü **Alle Arbeitsbereiche** aus, und wählen Sie dann den soeben erstellten Arbeitsbereich aus.
 
@@ -49,26 +49,27 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
 
     - **Jobname**: Das Feld Jobname sollte bereits mit einem eindeutigen Namen vorausgefüllt sein. Nehmen Sie keine Änderungen vor.
     - **Name des neuen Experiments**: `mslearn-bike-rental`
-    - **Beschreibung**: Automatisiertes maschinelles Lernen für die Vorhersage des Fahrradverleihs
+    - **Beschreibung:** `Automated machine learning for bike rental prediction`
     - **Tags**: *keine*
 
    **Vorgangsart und Daten**:
 
     - **Tasktyp auswählen**: Regression
-    - **Dataset auswählen**: Erstellen Sie ein neues Dataset mit den folgenden Einstellungen:
-        - **Datentyp**:
-            - **Name**: `bike-rentals`
-            - **Beschreibung:** `Historic bike rental data`
-            - **Typ:** Tabelle (mltable)
-        - **Datenquelle**:
-            - Klicken Sie auf **Aus lokalen Dateien**
-        - **Zielspeichertyp**:
-            - **Datenspeichertyp**: Azure Blob Storage
-            - **Name**: workspaceblobstore
-        - **MLtable-Auswahl**:
-            - **Ordner hochladen**: *Laden Sie den Ordner herunter, der die beiden Dateien enthält, die Sie hochladen müssen, und entzippen Sie ihn* `https://aka.ms/bike-rentals`
-
-        Klicken Sie auf **Erstellen**. Nachdem das Dataset erstellt wurde, wählen Sie das Dataset **bike-rentals** aus, um damit fortzufahren, den automatisierten ML-Auftrag zu übermitteln.
+    - **Auswählen von Daten**:
+        - Erstellen Sie eine neue Datenressource mit den folgenden Einstellungen:
+            - **Datentyp**:
+                - **Name**: `bike-rentals`
+                - **Beschreibung:** `Historic bike rental data`
+                - **Typ:** Tabelle (mltable)
+            - **Datenquelle**:
+                - Klicken Sie auf **Aus lokalen Dateien**
+            - **Zielspeichertyp**:
+                - **Datenspeichertyp**: Azure Blob Storage
+                - **Name**: workspaceblobstore
+            - **MLtable-Auswahl**:
+                - *Laden Sie den Ordner [bike-data](https://aka.ms/bike-rentals) von `https://aka.ms/bike-rentals` herunter, und entpacken Sie diesen.*
+                - **Ordner hochladen**: *Laden Sie den extrahierten Ordner **bike-data** hoch, der die Daten- und Tabellendefinitionsdateien enthält, die Sie für Ihr Trainingsdataset benötigen.*
+        - Wählen Sie die neu erstellte Datenressource **bike-rentals** aus, und definieren Sie den Auftrag für automatisiertes maschinelles Lernen auf der nächsten Seite (**Aufgabeneinstellungen**).
 
     **Task-Einstellungen**:
 
@@ -77,8 +78,8 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
     - **Zielspalte**: Verleihe (Integer)
     - **Zusätzliche Konfigurationseinstellungen**:
         - **Primary metric** (Primäre Metrik): NormalizedRootMeanSquaredError
-        - **Bestes Modell erklären**: *Nicht ausgewählt*
-        - **Ensemblestapelung aktivieren**: *Nicht ausgewählt*
+        - **Explain best model** (Bestes Modell erklären): *<u>Nicht</u> ausgewählt*
+        - **Ensemblestapelung aktivieren**: *<u>Nicht</u> ausgewählt*
         - **Alle unterstützten Modelle verwenden**: <u>Nicht</u> ausgewählt. *Sie beschränken den Auftrag darauf, nur einige bestimmte Algorithmen auszuprobieren*.
         - **Zulässige Modelle**: *Wählen Sie nur **RandomForest** und **LightGBM** aus. Normalerweise sollten Sie so viele Modelle wie möglich ausprobieren, aber jedes hinzugefügte Modell verlängert die Zeitspanne, die zum Ausführen des Auftrags benötigt wird*.
     - **Grenzwerte**: *Erweitern Sie diesen Abschnitt*
@@ -134,16 +135,16 @@ Wenn der Auftrag für automatisiertes maschinelles Lernen abgeschlossen ist, kö
 
     > **Hinweis** Wenn Sie eine Meldung erhalten, dass nicht genügend Kontingent für die Auswahl der virtuellen Maschine *Standard_DS3_v2* vorhanden ist, wählen Sie bitte eine andere aus.
 
-1. Warten Sie, bis die Bereitstellung gestartet wurde. Dieser Vorgang kann einige Sekunden in Anspruch nehmen. Der **Bereitstellungsstatus** für den Endpunkt **predict-rentals** wird im Hauptteil der Seite als *Wird ausgeführt* angegeben.
+1. Warten Sie, bis die Bereitstellung gestartet wurde. Dieser Vorgang kann einige Sekunden in Anspruch nehmen. Der **Bereitstellungsstatus** für den Endpunkt wird im Hauptteil der Seite als *Wird ausgeführt* angezeigt.
 1. Warten Sie, bis der **Bereitstellungsstatus** in *Erfolgreich* geändert wird. Dies kann 5-10 Minuten dauern.
 
 ## Testen des bereitgestellten Diensts
 
 Jetzt können Sie den bereitgestellten Dienst testen.
 
-1. Wählen Sie in Azure Machine Learning Studio im Menü auf der linken Seite **Endpunkte** aus, und öffnen Sie den Echtzeitendpunkt **predict-rentals**.
+1. Wählen Sie in Azure Machine Learning Studio im linken Menü **Endpunkte** aus, und öffnen Sie den von Ihnen erstellten Echtzeitendpunkt.
 
-1. Zeigen Sie auf der Seite des Echtzeitendpunkts **predict-rentals** die Registerkarte **Test** an.
+1. Zeigen Sie auf der Seite „Echtzeitendpunkt“ die Registerkarte **Test** an.
 
 1. Ersetzen Sie im Bereich **Input data to test endpoint** (Eingabedaten zum Testen des Endpunkts) den JSON-Code der Vorlage durch die folgenden Eingabedaten:
 
@@ -183,17 +184,24 @@ Jetzt können Sie den bereitgestellten Dienst testen.
 
     Im Testbereich wurden die Eingabedaten erfasst und das von Ihnen trainierte Modell verwendet, um die vorhergesagte Anzahl von Vermietungen zurückzugeben.
 
-Sehen wir uns an, was Sie getan haben. Sie haben ein Dataset mit Fahrradverleih-Verlaufsdaten verwendet, um ein Modell zu trainieren. Das Modell sagt auf der Grundlage von saisonalen und meteorologischen *Merkmalen*F vorher, die ausgeliehen werden.
+## Anzeigen von Code zum Nutzen des Diensts
+
+Nachdem Sie nun über einen vorhersagenden Dienstendpunkt verfügen, können Entwickelnde Anwendungen erstellen, die diesen nutzen.
+
+1. Zeigen Sie auf der Seite „Echtzeitendpunkt“ die Registerkarte **Nutzen** an.
+1. Überprüfen Sie den Beispielcode zum Nutzen Ihres Endpunkts, der für mehrere Programmiersprachen bereitgestellt wird.
+
+Sehen wir uns an, was Sie getan haben. Sie haben ein Dataset mit Fahrradverleih-Verlaufsdaten verwendet, um ein Modell zu trainieren. Das Modell sagt auf der Grundlage von saisonalen und meteorologischen *Merkmalen*F vorher, die ausgeliehen werden. Schließlich haben Sie das Modell getestet und den Code überprüft, den Entwickelnde zum Erstellen einer Anwendung verwenden können, um diesen zu nutzen.
 
 ## Bereinigung
 
 Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden.
 
-1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) auf der Registerkarte **Endpunkte** den Endpunkt **predict-rentals** aus. Klicken Sie dann auf **Löschen**, und bestätigen Sie, dass Sie den Endpunkt löschen möchten.
+1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com) auf der Registerkarte **Endpunkte** den Endpunkt aus, den Sie bereitgestellt haben. Klicken Sie dann auf **Löschen**, und bestätigen Sie, dass Sie den Endpunkt löschen möchten.
 
     Durch das Löschen Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen.
 
 So löschen Sie Ihren Arbeitsbereich:
 
-1. Öffnen Sie im [Azure-Portal](https://portal.azure.com?azure-portal=true) auf der Seite **Ressourcengruppen** die Ressourcengruppe, die Sie beim Erstellen des Azure Machine Learning-Arbeitsbereichs angegeben haben.
+1. Öffnen Sie im [Azure-Portal](https://portal.azure.com) auf der Seite **Ressourcengruppen** die Ressourcengruppe, die Sie beim Erstellen des Azure Machine Learning-Arbeitsbereichs angegeben haben.
 2. Klicken Sie auf **Ressourcengruppe löschen**, geben Sie den Ressourcengruppennamen ein, um zu bestätigen, dass Sie ihn löschen möchten, und klicken Sie dann auf **Löschen**.
