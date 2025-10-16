@@ -53,6 +53,8 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
     - **Tags**: *keine*
 
    **Vorgangsart und Daten**:
+    
+    >**HINWEIS:** Einige Abonnements verfügen über Berechtigungen, die nicht zulassen, dass *bike-data* dem *workspaceblobstore* hinzugefügt werden. Wenn dieses Problem auftritt, müssen Sie derzeit entweder zu einem persönlichen Abonnement wechseln oder die Berechtigungen Ihres Abonnements anpassen. 
 
     - **Tasktyp auswählen**: Regression
     - **Auswählen von Daten**:
@@ -69,6 +71,7 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
             - **MLtable-Auswahl**:
                 - *Laden Sie den Ordner [bike-data](https://aka.ms/bike-rentals) von `https://aka.ms/bike-rentals` herunter, und entpacken Sie diesen.*
                 - **Ordner hochladen**: *Laden Sie den extrahierten Ordner **bike-data** hoch, der die Daten- und Tabellendefinitionsdateien enthält, die Sie für Ihr Trainingsdataset benötigen.*
+                - **Hinweis**: *Wenn Sie in einer Meldung aufgefordert werden, die Datenüberprüfung zum Fortfahren zu überspringen, wählen Sie die Option zum Überspringen der Datenüberprüfung aus.*
         - Wählen Sie die neu erstellte Datenressource **bike-rentals** aus, und definieren Sie den Auftrag für automatisiertes maschinelles Lernen auf der nächsten Seite (**Aufgabeneinstellungen**).
 
     **Task-Einstellungen**:
