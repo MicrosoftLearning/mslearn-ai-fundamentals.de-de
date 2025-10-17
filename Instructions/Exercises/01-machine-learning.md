@@ -54,7 +54,7 @@ Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen un
 
    **Vorgangsart und Daten**:
     
-    >**HINWEIS:** Einige Abonnements verfügen über Berechtigungen, die nicht zulassen, dass *bike-data* dem *workspaceblobstore* hinzugefügt werden. Wenn dieses Problem auftritt, müssen Sie derzeit entweder zu einem persönlichen Abonnement wechseln oder die Berechtigungen Ihres Abonnements anpassen. 
+    >**HINWEIS:** Einige Abonnements verfügen über Berechtigungen, die nicht zulassen, dass *bike-data* dem *workspaceblobstore* hinzugefügt werden. Wenn dieses Problem auftritt, müssen Sie zu einem anderen Abonnement wechseln.
 
     - **Tasktyp auswählen**: Regression
     - **Auswählen von Daten**:
