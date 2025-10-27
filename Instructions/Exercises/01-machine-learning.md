@@ -1,210 +1,194 @@
 ---
 lab:
-  title: Erkunden des automatisierten maschinellen Lernens in Azure Machine Learning
+  title: Erkunden des automatisierten maschinelles Lernens
 ---
 
-# Erkunden des automatisierten maschinellen Lernens in Azure Machine Learning
+# Erkunden des automatisierten maschinelles Lernens
 
-In dieser Übung verwenden Sie das Feature für automatisiertes maschinelles Lernen in Azure Machine Learning, um ein Machine Learning-Modell zu trainieren und auszuwerten. Anschließend stellen Sie das trainierte Modell bereit und testen es.
+In dieser Übung verwenden Sie das automatisierte maschinelle Lernen, um ein Machine Learning-Modell zu trainieren und auszuwerten. Anschließend stellen Sie das trainierte Modell bereit und testen es.
 
-Diese Übung dauert ca. **35** Minuten.
+> **Hinweis:** Diese Übung dient dazu, Sie durch die Schritte zum Trainieren und Testen eines Modells mithilfe von***Azure Machine Learning*** zu führen. Wenn Sie über ein Azure-Abonnement mit ausreichenden Berechtigungen verfügen, können Sie einen Azure Machine Learning-Arbeitsbereich bereitstellen und diese für die Übung verwenden. Azure Machine Learning ist jedoch für unternehmensweite Skalierungs-Machine Learning-Lösungen konzipiert, die große Datenmengen und cloudbasierte Compute umfassen. Einige Vorgänge in Azure Machine Learning erfordern eine Bereitstellungsberechnung, die erhebliche Zeit in Anspruch nehmen kann. Wenn Sie keinen Zugriff auf Azure haben oder nur begrenzte Zeit haben, um die Übung abzuschließen, wird auch eine browserbasierte***ML Lab-App*** bereitgestellt, die die Kernfunktionen von Azure ML enthält, die in dieser Übung verwendet wird, und Sie können dies verwenden, um echte Machine Learning-Modelle zu trainieren und zu testen, genau wie in Azure ML. Obwohl die Benutzeroberfläche in ML Lab nicht*mit Azure Machine Learning identisch* ist, ist es ähnlich genug, um den Übergang zu Azure Machine Learning intuitiv zu gestalten. Beachten Sie, dass die ML Lab-App im Browser ausgeführt wird, sodass die Aktualisierung der Seite an jedem Punkt die App neu startet!
 
-## Erstellen eines Azure Machine Learning-Arbeitsbereichs
+Diese Übung sollte ungefähr**35** Minuten dauern ( weniger, wenn Sie die browserbasierte ML Lab-App verwenden).
 
-Um Azure Machine Learning verwenden zu können, müssen Sie einen Azure Machine Learning-Arbeitsbereich in Ihrem Azure-Abonnement bereitstellen. Anschließend können Sie Azure Machine Learning Studio verwenden, um mit den Ressourcen in Ihrem Arbeitsbereich zu arbeiten.
+## Erstellen eines Arbeitsbereichs
 
-> **Tipp**: Wenn Sie bereits über einen Azure Machine Learning-Arbeitsbereich verfügen, können Sie diesen verwenden und mit der nächsten Aufgabe fortfahren.
+Ein Arbeitsbereich wird verwendet, um alle Ihre maschinellen Lernressourcen zusammenzuhalten, wodurch es einfacher ist, Daten, Code, Modelle und andere Ressourcen an einem zentralen Ort zu verwalten.
 
-1. Melden Sie sich mit Ihren Microsoft-Anmeldeinformationen beim [Azure-Portal](https://portal.azure.com) in `https://portal.azure.com` an.
+1. Öffnen Sie das Portal für die Umgebung, die Sie in dieser Übung verwenden möchten, und melden Sie sich an, wenn Sie dazu aufgefordert werden:
+    - Azure-basiertes[Azure Machine Learning Studio](https://ml.azure.com){:target="_blank"} unter`https://ml.azure.com`
+    - Browserbasierte[ML Lab](https://aka.ms/ml-lab){:target="_blank"} unter`https://aka.ms/ml-lab`
 
-1. Klicken Sie auf **＋Ressource erstellen**, suchen Sie nach *Machine Learning*, und erstellen Sie eine neue **Azure Machine Learning**-Ressource mit den folgenden Einstellungen:
-    - **Abonnement**: *Ihr Azure-Abonnement*.
-    - **Ressourcengruppe**: *Erstellen Sie eine Ressourcengruppe, oder wählen Sie eine Ressourcengruppe aus*.
-    - **Name**: *Geben Sie einen eindeutigen Namen für den Arbeitsbereich ein.*
-    - **Region:** USA, Osten.
-    - **Speicherkonto**: *Für Ihren Arbeitsbereich wird standardmäßig ein neues Speicherkonto erstellt*.
-    - **Schlüsseltresor**: *Für Ihren Arbeitsbereich wird standardmäßig ein neuer Schlüsseltresor erstellt*.
-    - **Application Insights**: *Für Ihren Arbeitsbereich wird standardmäßig eine neue Application Insights-Ressource erstellt*.
-    - **Containerregistrierung**: Keine (*wird automatisch erstellt, wenn Sie das erste Mal ein Modell in einem Container bereitstellen*).
+    > **Tipp**: Wenn Azure Machine Learning Studio in einem vorhandenen Arbeitsbereich geöffnet wird, navigieren Sie zur**Seite "Alle Arbeitsbereiche** ".
 
-1. Klicken Sie auf**Überprüfen + erstellen** und dann auf **Erstellen**. Warten Sie, bis Ihr Arbeitsbereich erstellt wurde (dies kann einige Minuten dauern), und wechseln Sie dann zur bereitgestellten Ressource.
+1. Erstellen Sie einen neuen Arbeitsbereich mit einem geeigneten Namen.
 
-#### Studio starten 
+    Wenn Sie Azure Machine Learning verwenden, benötigen Sie keinen*Hub* für diese Übung. Wählen Sie geeignete erweiterte Einstellungen basierend auf Richtlinieneinschränkungen in Ihrem Azure-Abonnement aus.
 
-1. Wählen Sie in Ihrer Azure Machine Learning-Arbeitsbereichsressource **Studio starten** (oder öffnen Sie einen neuen Browser-Tab und navigieren Sie zu [https://ml.azure.com](https://ml.azure.com) und melden Sie sich mit Ihrem Microsoft-Konto bei Azure Machine Learning Studio an). Schließen Sie alle angezeigten Nachrichten.
+1. Nachdem der Arbeitsbereich erstellt wurde, wählen Sie ihn aus, um seine**Startseite** anzuzeigen.
 
-1. In Azure Machine Learning Studio sollte Ihr neu erstellter Arbeitsbereich angezeigt werden. Andernfalls wählen Sie im linken Menü **Alle Arbeitsbereiche** aus, und wählen Sie dann den soeben erstellten Arbeitsbereich aus.
+    Beachten Sie, dass der Arbeitsbereich mehrere Seiten enthält, die im Navigationsbereich auf der linken Seite angezeigt werden. Sie können diesen Bereich erweitern und reduzieren, indem Sie oben das Menü **&#9776;** verwenden.
+
+## Herunterladen von Daten
+
+In dieser Übung verwenden Sie ein Dataset von Eisverkäufen, um ein Modell zu trainieren, das die Nachfrage nach Eiscremes an einem bestimmten Tag basierend auf saisonalen und meteorologischen Merkmalen vorhersagt.
+
+1. Laden Sie auf einer neuen Browserregisterkarte**[ml-data.zip](https://aka.ms/mslearn-ml-data)** von`https://aka.ms/mslearn-ml-data` Ihrem lokalen Computer herunter.
+1. Extrahieren Sie das heruntergeladene**ml-data.zip** Archiv, um die darin enthaltenen Dateien anzuzeigen. Beachten Sie, dass eine dieser Dateien**ice-cream.csv**ist, die die für diese Übung erforderlichen Eisumsatzdaten enthält.
 
 ## Verwenden von automatisiertem maschinellem Lernen zum Trainieren eines Modells
 
-Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen und Parameter zu testen, um mehrere Modelle zu trainieren und das beste Modell für Ihre Daten zu identifizieren. In dieser Übung verwenden Sie ein Dataset mit Verlaufsdetails zu Fahrradvermietungen, um ein Modell zu trainieren, das basierend auf saisonalen und meteorologischen Merkmalen die Anzahl der Fahrradvermietungen vorhersagt, die an einem bestimmten Tag zu erwarten sind.
+Automatisiertes maschinelles Lernen ermöglicht es Ihnen, mehrere Algorithmen und Parameter zu testen, um mehrere Modelle zu trainieren und das beste Modell für Ihre Daten zu identifizieren.
 
-> **Quellenangaben**: *Die in dieser Übung verwendeten Daten werden von [Capital Bikeshare](https://www.capitalbikeshare.com/system-data) abgeleitet und in Übereinstimmung mit der [Lizenzvereinbarung](https://www.capitalbikeshare.com/data-license-agreement) für veröffentlichte Daten verwendet.*
+1. Zeigen Sie im Portal die Seite**Automatisierte ML** (unter**Dokumenterstellung**) an.
 
-1. Zeigen Sie in [Azure Machine Learning Studio](https://ml.azure.com?azure-portal=true) die Seite **Automated ML** (Automatisiertes ML) (unter **Dokumenterstellung**) an.
+1. Erstellen Sie einen neuen automatisierten ML-Auftrag mit den folgenden Einstellungen, und verwenden Sie nach Bedarf**Weiter**, um die Benutzeroberfläche zu durchlaufen:
 
-1. Erstellen Sie einen neuen automatisierten ML-Auftrag mit den folgenden Einstellungen, und verwenden Sie nach Bedarf **Weiter**, um die Benutzeroberfläche zu durchlaufen:
+    > **Tipp**: Wenn in den folgenden Schritten keine expliziten Informationen für eine Einstellung angegeben werden, verwenden Sie den Standardwert.
 
     **Grundeinstellungen**:
 
-    - **Jobname**: Das Feld Jobname sollte bereits mit einem eindeutigen Namen vorausgefüllt sein. Nehmen Sie keine Änderungen vor.
-    - **Name des neuen Experiments**: `mslearn-bike-rental`
-    - **Beschreibung:** `Automated machine learning for bike rental prediction`
-    - **Tags**: *keine*
+    - Zuweisen eines eindeutigen**Auftragsnamens** für Ihren automatisierten Machine Learning-Job
 
    **Vorgangsart und Daten**:
-    
-    >**HINWEIS:** Einige Abonnements verfügen über Berechtigungen, die nicht zulassen, dass *bike-data* dem *workspaceblobstore* hinzugefügt werden. Wenn dieses Problem auftritt, müssen Sie zu einem anderen Abonnement wechseln.
 
-    - **Tasktyp auswählen**: Regression
-    - **Auswählen von Daten**:
-        - Erstellen Sie eine neue Datenressource mit den folgenden Einstellungen:
-            - **Datentyp**:
-                - **Name**: `bike-rentals`
-                - **Beschreibung:** `Historic bike rental data`
-                - **Typ:** Tabelle (mltable)
-            - **Datenquelle**:
-                - Klicken Sie auf **Aus lokalen Dateien**
-            - **Zielspeichertyp**:
-                - **Datenspeichertyp**: Azure Blob Storage
-                - **Name**: workspaceblobstore
-            - **MLtable-Auswahl**:
-                - *Laden Sie den Ordner [bike-data](https://aka.ms/bike-rentals) von `https://aka.ms/bike-rentals` herunter, und entpacken Sie diesen.*
-                - **Ordner hochladen**: *Laden Sie den extrahierten Ordner **bike-data** hoch, der die Daten- und Tabellendefinitionsdateien enthält, die Sie für Ihr Trainingsdataset benötigen.*
-                - **Hinweis**: *Wenn Sie in einer Meldung aufgefordert werden, die Datenüberprüfung zum Fortfahren zu überspringen, wählen Sie die Option zum Überspringen der Datenüberprüfung aus.*
-        - Wählen Sie die neu erstellte Datenressource **bike-rentals** aus, und definieren Sie den Auftrag für automatisiertes maschinelles Lernen auf der nächsten Seite (**Aufgabeneinstellungen**).
+    - Legen Sie den Vorgangstyp auf**Regression**fest.
+    - Erstellen Sie eine neuen***tabellarische*** Datenressource namens**ice-cream**
+        - Laden Sie die lokale**ice-cream.csv** Datei in den Standardspeicher des Arbeitsbereichs hoch.
+        - Fügen Sie<u>nur</u> die folgenden Spalten hinzu (*Datum* ist für jede Zeile eindeutig und fügt eigene Funktionen hinzu):
+            - **DayOfWeek**
+            - **Monat**
+            - **Temperature**
+            - **Niederschlag**
+            - **IceCreamsSold**
+        - Erstellen Sie dann das Datenobjekt.
+    - Stellen Sie sicher, dass Ihre neu erstellte**ice-cream**-Datenressource ausgewählt ist, bevor Sie zum nächsten Schritt wechseln.
+
+    > **Hinweis:** Wenn Sie ein Azure-Abonnement verwenden, für das Sie kein Admin sind, wurde der schlüsselbasierte Zugriff auf den Speicher möglicherweise durch eine Richtlinie nicht zugelassen. In diesem Fall müssen Sie mit Ihrem Admin zusammenarbeiten, um den schlüsselbasierten Zugriff zuzulassen oder Ihren Azure Machine Learning-Arbeitsbereich neu zu konfigurieren, um die Entra-ID-Authentifizierung für den Zugriff auf den Speicher zu verwenden. Wenn Sie dies nicht tun können, verwenden Sie die browserbasierte***ML Lab***-App für diese Übung.
 
     **Task-Einstellungen**:
 
-    - **Tasktyp**: Regression
-    - **Dataset:** bike-rentals
-    - **Zielspalte**: Verleihe (Integer)
-    - **Zusätzliche Konfigurationseinstellungen**:
-        - **Primary metric** (Primäre Metrik): NormalizedRootMeanSquaredError
-        - **Explain best model** (Bestes Modell erklären): *<u>Nicht</u> ausgewählt*
-        - **Ensemblestapelung aktivieren**: *<u>Nicht</u> ausgewählt*
-        - **Alle unterstützten Modelle verwenden**: <u>Nicht</u> ausgewählt. *Sie beschränken den Auftrag darauf, nur einige bestimmte Algorithmen auszuprobieren*.
-        - **Zulässige Modelle**: *Wählen Sie nur **RandomForest** und **LightGBM** aus. Normalerweise sollten Sie so viele Modelle wie möglich ausprobieren, aber jedes hinzugefügte Modell verlängert die Zeitspanne, die zum Ausführen des Auftrags benötigt wird*.
-    - **Grenzwerte**: *Erweitern Sie diesen Abschnitt*
-        - **Maximale Testversionen**: `3`
-        - **Maximale gleichzeitige Testversionen**: `3`
-        - **Maximale Knoten**: `3`
-        - **Metrischer Bewertungsschwellenwert**: `0.085` (*sodass wenn ein Modell eine normalisierte Wurzel der mittleren Fehlerquadratsumme von 0,085 oder weniger erreicht, der Auftrag beendet wird.*)
-        - **Experiment Timeout**: `15`
-        - **Iterationstimeout**: `15`
-        - **Vorzeitige Beendigung aktivieren**: *Ausgewählt*
-    - **Validierung und Test**:
-        - **Validierungstyp**: Aufteilung der Train-Validation
-        - **Prozentsatz der Validierungsdaten**: 10
-        - **Testdataset**: Keins
+    - Legen Sie die**Zielspalte** (die Beschriftung, die das Modell vorherzusagen soll) auf**IceCreamsSold**fest.
+    - Legen Sie**zusätzliche Konfigurationseinstellungen** fest:
+        - Legen Sie die**primäre Metrik** auf die Metrik fest, die Sie zum Auswerten der Modellleistung verwenden möchten. Verwenden Sie in dieser Übung die*R<sup>2</sup>*-Bewertung.
+        - Wählen Sie die Modellalgorithmen aus, die Sie ausprobieren möchten (oder lassen Sie sie alle ausgewählt)
+    - Festlegen**von Featurisierungseinstellungen**:
+        - Verwenden Sie diese Einstellungen, um die Featurisierung anzupassen (wie die Datenfeatures für Modelltraining vorbereitet werden)
+    - Legen Sie**Grenzwerte** fest:
+        - Verwenden Sie die Grenzwerte, um den Trainingsauftrag frühzeitig basierend auf bestimmten Kriterien zu beenden. Legen Sie in dieser Übung die folgenden Grenzwerte fest:
+            - **Metric score threshold** (Metrischer Bewertungsschwellenwert): 0,9
+            - **Experiment timeout minutes** 15
+        
+        > **Beachten Sie,** dass Sie diese Grenzwerte bei der Verwendung von Azure Machine Learning festlegen müssen, da das Ausführen von Trainingsaufträgen für jeden möglichen Algorithmus und jede Kombination aus Reifung möglicherweise Stunden dauern kann!
 
     **Compute:**
 
-    - **Computetyp auswählen**: Serverlos
-    - **VM-Typ:** CPU
-    - **VM-Dienstebene**: Dediziert.
-    - **VM-Größe:** Standard_DS3_V2\*
-    - **Anzahl von Instanzen**: 1
+    - Verwenden Sie**serverloses** Compute
 
-    \* *Wenn Ihr Abonnement die Ihnen zur Verfügung stehenden VM-Größen einschränkt, wählen Sie eine beliebige Größe.*
+    **Überprüfung**
 
-1. Übermitteln des Trainingsauftrags Wird automatisch gestartet.
+    - Überprüfen Sie die Einstellungen, und überprüfen Sie sie sorgfältig. Übermitteln Sie dann den Trainingsauftrag. Wird automatisch gestartet.
 
-1. Warten Sie auf den Abschluss des Auftrags. Dies kann einige Zeit in Anspruch nehmen und ist möglicherweise ein guter Zeitpunkt für eine Kaffeepause.
+1. Warten Sie auf den Abschluss des Auftrags.
+
+    > **Tipp**: Wenn Sie Azure Machine Learning verwenden, kann es eine Weile dauern – jetzt ist es vielleicht eine gute Zeit für eine Kaffeepause!
 
 ## Überprüfen des besten Modells
 
 Wenn der Auftrag für automatisiertes maschinelles Lernen abgeschlossen ist, können Sie das am besten trainierte Modell überprüfen.
 
-1. Beachten Sie auf der Registerkarte **Übersicht** des automatisierten ML-Auftrags die Zusammenfassung des besten Modells.
-    ![Screenshot: Zusammenfassung des besten Modells des automatisierten Machine Learning-Auftrags mit einem Rahmen um den Algorithmusnamen.](./media/use-automated-machine-learning/complete-run.png)
+1. Zeigen Sie auf der Registerkarte**Übersicht** der Seite Auftragsdetails die Informationen zum Auftrag an, und notieren Sie sich die beste Modellzusammenfassung.
   
-1. Wählen Sie den Text unter **Algorithmusname**, um das beste Modell und seine Details anzuzeigen.
-
-1. Klicken Sie auf die Registerkarte **Metriken**, und wählen Sie die Diagramme **residuals** und **predicted_true** aus, wenn diese nicht bereits ausgewählt sind.
-
-    Überprüfen Sie die Diagramme, die die Leistung des Modells anzeigen. Das **Residualwertediagramm** zeigt die *Residualwerte* (die Unterschiede zwischen vorhergesagten und tatsächlichen Werten) als Histogramm an. Das Diagramm **predicted_true** vergleicht die vorhergesagten Werte mit den tatsächlichen Werten.
+1. Klicken Sie auf den**Algorithmusnamen**, um die Details des besten Modells anzuzeigen. Zeigen Sie dann auf der Detailseite des untergeordneten Auftrags die folgenden Registerkarten an:
+    - **Übersicht:** Allgemeine Details für den untergeordneten Auftrag.
+    - **Modell**: Informationen über das trainierte Modell.
+    - **Metrikenauswertungsmetriken** und Visualisierungen für das Modell basierend auf den Testdaten, die während des Trainingsprozesses verwendet werden.
+    - **Ausgaben und Protokolle**: Während des Trainingsprozesses protokollierte Informationen.
 
 ## Bereitstellen und Testen des Modells
 
-1. Wählen Sie auf der Registerkarte **Modell** für das beste Modell, das von Ihrem Auftrag für automatisiertes maschinelles Lernen trainiert wurde, die Option **Bereitstellen** aus und verwenden Sie die Option **Echtzeitendpunkt**, um das Modell mit den folgenden Einstellungen bereitzustellen:
-    - **VM**: Standard_DS3_v2
-    - **Instanzenanzahl:** 3
-    - **Endpunkt**: Neu
-    - **Endpunktname**: *Behalten Sie die Standardeinstellung bei, oder stellen Sie sicher, dass sie global eindeutig ist*
-    - **Bereitstellungsname**: *Standardeinstellung beibehalten*
-    - **Rückschließen der Datensammlung**: *Disabled* (Deaktiviert)
-    - **Paketmodell**: *Disabled* (Deaktiviert)
+1. Wählen Sie auf der Registerkarte**Modell** für das beste Modell, das von Ihrem automatisierten Machine-Learning-Job trainiert wurde, die Option**Bereitstellen** aus, um das Modell auf einem Echtzeitendpunkt bereitzustellen.
 
-    > **Hinweis** Wenn Sie eine Meldung erhalten, dass nicht genügend Kontingent für die Auswahl der virtuellen Maschine *Standard_DS3_v2* vorhanden ist, wählen Sie bitte eine andere aus.
+    Wählen Sie die geeigneten Optionen für**Instanzen** und**virtuelle Computer** für die Berechnung aus, auf der der bereitgestellte Endpunkt ausgeführt wird (was von dem in Ihrem Azure-Abonnement verfügbaren Kontingent abhängig sein kann), und weisen Sie geeignete**Endpunkt** und**Bereitstellungsnamen** zu.
 
-1. Warten Sie, bis die Bereitstellung gestartet wurde. Dieser Vorgang kann einige Sekunden in Anspruch nehmen. Der **Bereitstellungsstatus** für den Endpunkt wird im Hauptteil der Seite als *Wird ausgeführt* angezeigt.
-1. Warten Sie, bis der **Bereitstellungsstatus** in *Erfolgreich* geändert wird. Dies kann 5-10 Minuten dauern.
+1. Warten Sie auf eine Benachrichtigung, dass die Bereitstellung abgeschlossen ist.
+
+    > **Tipp**: In Azure Machine Learning Studio kann die Endpunktbereitstellung 5 bis 10 Minuten dauern.
 
 ## Testen des bereitgestellten Diensts
 
 Jetzt können Sie den bereitgestellten Dienst testen.
 
-1. Wählen Sie in Azure Machine Learning Studio im linken Menü **Endpunkte** aus, und öffnen Sie den von Ihnen erstellten Echtzeitendpunkt.
+1. Wählen Sie im Navigationsmenü die Seite**Endpunkte** aus, und öffnen Sie den von Ihnen erstellten Echtzeitendpunkt.
 
-1. Zeigen Sie auf der Seite „Echtzeitendpunkt“ die Registerkarte **Test** an.
+1. Zeigen Sie auf der Endpunktseite die Registerkarte**Test** an.
 
-1. Ersetzen Sie im Bereich **Input data to test endpoint** (Eingabedaten zum Testen des Endpunkts) den JSON-Code der Vorlage durch die folgenden Eingabedaten:
+1. Ersetzen Sie im Bereich**Input data to test endpoint** (Eingabedaten zum Testen des Endpunkts) den JSON-Code der Vorlage durch die folgenden Eingabedaten:
 
     ```json
-      {
+   {
      "input_data": {
-       "columns": [
-         "day",
-         "mnth",
-         "year",
-         "season",
-         "holiday",
-         "weekday",
-         "workingday",
-         "weathersit",
-         "temp",
-         "atemp",
-         "hum",
-         "windspeed"
-       ],
-       "index": [0],
-       "data": [[1,1,2022,2,0,1,1,2,0.3,0.3,0.3,0.3]]
+        "columns": [
+            "DayOfWeek",
+            "Month",
+            "Temperature",
+            "Rainfall"
+        ],
+        "index": [0],
+        "data": [["Wednesday","June",70.5,0.05]]
      }
-    }
-
+   }
     ```
 
-1. Klicken Sie auf die Schaltfläche **Testen**.
+1. Klicken Sie auf die Schaltfläche**Testen**.
 
 1. Überprüfen Sie die Testergebnisse, die eine vorhergesagte Anzahl von Vermietungen basierend auf den Eingabefeatures enthalten, ähnlich wie hier:
 
     ```JSON
-    [
-      352.3564674945718
-    ]
+   [
+       120.16208168753236
+   ]
     ```
 
     Im Testbereich wurden die Eingabedaten erfasst und das von Ihnen trainierte Modell verwendet, um die vorhergesagte Anzahl von Vermietungen zurückzugeben.
 
-## Anzeigen von Code zum Nutzen des Diensts
+## Anzeigen von Code zum Verwenden des Modells
 
-Nachdem Sie nun über einen vorhersagenden Dienstendpunkt verfügen, können Entwickelnde Anwendungen erstellen, die diesen nutzen.
+Nachdem Sie nun über ein vorhersagendes Modell verfügen, können Entwickelnde Anwendungen erstellen, die diesen nutzen.
 
-1. Zeigen Sie auf der Seite „Echtzeitendpunkt“ die Registerkarte **Nutzen** an.
-1. Überprüfen Sie den Beispielcode zum Nutzen Ihres Endpunkts, der für mehrere Programmiersprachen bereitgestellt wird.
+1. Zeigen Sie auf der Seite „Echtzeitendpunkt“ die Registerkarte**Nutzen** an.
+1. Überprüfen Sie den Beispielcode, um Ihr Modell zu nutzen.
 
-Sehen wir uns an, was Sie getan haben. Sie haben ein Dataset mit Fahrradverleih-Verlaufsdaten verwendet, um ein Modell zu trainieren. Das Modell sagt auf der Grundlage von saisonalen und meteorologischen *Merkmalen*F vorher, die ausgeliehen werden. Schließlich haben Sie das Modell getestet und den Code überprüft, den Entwickelnde zum Erstellen einer Anwendung verwenden können, um diesen zu nutzen.
+## Wenn die Zeit es zulässt
+
+Wenn Sie mit automatisiertem maschinellem Lernen experimentieren möchten, versuchen Sie, ein**Klassifizierungsmodell** basierend auf der**penguins.csv** Datei zu trainieren, die**im ml-data.zip** Archiv enthalten war, das Sie zuvor heruntergeladen haben. Verwenden Sie alle Spalten in diesem Dataset.
+
+Nach dem Training und Bereitstellung eines Klassifizierungsmodells können Sie es im Endpunkt mit dem folgenden JSON testen:
+
+```json
+{
+    "input_data": {
+    "columns": [
+        "CulmenLength",
+        "CulmenDepth",
+        "FlipperLength",
+        "BodyMass"
+    ],
+    "index": [0],
+    "data": [[45.2,13.8,215,4750]]
+    }
+}
+```
 
 ## Bereinigung
 
-Der von Ihnen erstellte Webdienst wird in einer *Azure-Containerinstanz* gehostet. Wenn Sie nicht weiter experimentieren möchten, sollten Sie den Endpunkt löschen, um eine unnötige Azure-Nutzung zu vermeiden.
+Wenn Sie Azure Machine Learning zum Abschließen dieser Übung verwendet haben, sollten Sie die von Ihnen erstellten Ressourcen löschen, um unnötige Azure-Nutzung zu vermeiden.
 
-1. Wählen Sie in [Azure Machine Learning Studio](https://ml.azure.com) auf der Registerkarte **Endpunkte** den Endpunkt aus, den Sie bereitgestellt haben. Klicken Sie dann auf **Löschen**, und bestätigen Sie, dass Sie den Endpunkt löschen möchten.
+1. Wählen Sie in[Azure Machine Learning Studio](https://ml.azure.com) auf der Registerkarte**Endpunkte** den Endpunkt aus, den Sie bereitgestellt haben. Klicken Sie dann auf**Löschen**, und bestätigen Sie, dass Sie den Endpunkt löschen möchten.
 
     Durch das Löschen Ihrer Compute-Instanz wird sichergestellt, dass Ihrem Abonnement keine Computeressourcen in Rechnung gestellt werden. Ihnen wird jedoch eine geringe Datenspeichermenge in Rechnung gestellt, solange der Azure Machine Learning-Arbeitsbereich in Ihrem Abonnement enthalten ist. Wenn Sie mit dem Erkunden von Azure Machine Learning fertig sind, können Sie Ihren Azure Machine Learning-Arbeitsbereich und die zugehörigen Ressourcen löschen.
 
 So löschen Sie Ihren Arbeitsbereich:
 
-1. Öffnen Sie im [Azure-Portal](https://portal.azure.com) auf der Seite **Ressourcengruppen** die Ressourcengruppe, die Sie beim Erstellen des Azure Machine Learning-Arbeitsbereichs angegeben haben.
-2. Klicken Sie auf **Ressourcengruppe löschen**, geben Sie den Ressourcengruppennamen ein, um zu bestätigen, dass Sie ihn löschen möchten, und klicken Sie dann auf **Löschen**.
+1. Öffnen Sie im[Azure-Portal](https://portal.azure.com) auf der Seite**Ressourcengruppen** die Ressourcengruppe, die Sie beim Erstellen des Azure Machine Learning-Arbeitsbereichs angegeben haben.
+2. Klicken Sie auf**Ressourcengruppe löschen**, geben Sie den Ressourcengruppennamen ein, um zu bestätigen, dass Sie ihn löschen möchten, und klicken Sie dann auf**Löschen**.
