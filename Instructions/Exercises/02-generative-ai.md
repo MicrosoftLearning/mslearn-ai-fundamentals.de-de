@@ -15,7 +15,7 @@ Diese Übung dauert ca. **20** Minuten.
 
     ![Screenshot: Startseite des Azure AI Foundry-Portals](./media/ai-foundry-portal.png)
 
-1. Suchen Sie im Abschnitt **Modelle und Fähigkeiten erkunden** nach `gpt-4o`. Wählen Sie dann in den Suchergebnissen das Modell **gpt-4o** aus, um dessen Details anzuzeigen.
+1. Suchen Sie im Abschnitt **Modelle und Funktionen erkunden** nach `gpt-4o`. Wählen Sie dann in den Suchergebnissen das Modell **gpt-4o** aus, um dessen Details anzuzeigen.
 
     ![Screenshot: Detailseite des gpt-4o-Modells](./media/gpt-4o-details.png)
 
